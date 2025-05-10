@@ -10,7 +10,7 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <h4>AR.js + A-Frame + GPS!!!!!!</h4>
+    <h4>AR.js + A-Frame + GPS!!!!!!dsafgasdfjakldfjdaskfj</h4>
     <a-scene renderer="logarithmicDepthBuffer: true;"
              embedded
              loading-screen="enabled: false;"
@@ -69,6 +69,20 @@
                 const gpsData = camera.components['gps-camera'].currentCoords;
                 if (gpsData) {
                     console.log('Current GPS coordinates:', gpsData);
+
+                    const modelLatitude = 35.614904;
+                    const modelLongitude = 139.721611;
+
+                    // 距離を計算
+                    const distance = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude, modelLongitude);
+                    console.log(distance);
+                    // 一定の距離 (例: 50メートル) に近づいたら表示
+                    const model = document.querySelector('#goat-model');
+                    if (distance <= 10) {
+                        model.setAttribute('visible', 'true');
+                    } else {
+                        model.setAttribute('visible', 'false');
+                    }
                 } else {
                     console.log('GPS coordinates not available yet.');
                 }
@@ -91,21 +105,7 @@
                 var latitude = position.coords.latitude;
                 var longitude = position.coords.longitude;
 
-                console.log("ユーザーの位置1:", latitude, longitude);
-
-                const modelLatitude = 35.614904;
-                const modelLongitude = 139.721611;
-
-                // 距離を計算
-                const distance = calculateDistance(latitude, longitude, modelLatitude, modelLongitude);
-                console.log(distance);
-                // 一定の距離 (例: 50メートル) に近づいたら表示
-                const model = document.querySelector('#goat-model');
-                if (distance <= 10) {
-                    model.setAttribute('visible', 'true');
-                } else {
-                    model.setAttribute('visible', 'false');
-                }
+            
 
             }, function () {
                 console.log("位置情報取得失敗");
