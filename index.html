@@ -10,6 +10,7 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
+    <h4>AR.js + A-Frame + GPS</h4>
     <a-scene renderer="logarithmicDepthBuffer: true;"
              embedded
              loading-screen="enabled: false;"
@@ -32,7 +33,7 @@
     </a-scene>
 
     <script>
-        console.log("AR.js is running");
+        console.log("スタート");
         // 距離計算用の関数
         function calculateDistance(lat1, lon1, lat2, lon2) {
             const R = 6371e3; // 地球の半径 (メートル)
