@@ -10,7 +10,7 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <h4>AR.js + A-Frame + GPS!!!!!!dsafgasdfjakldfjdaskfj</h4>
+    <h4 class="text">AR.js + A-Frame + GPS!!!!!!dsafgasdfjakldfjdaskfj</h4>
     <a-scene renderer="logarithmicDepthBuffer: true;"
              embedded
              loading-screen="enabled: false;"
@@ -51,16 +51,6 @@
         }
 
 
-        document.querySelector('a-camera').addEventListener('componentinitialized', (event) => {
-            if (event.detail.name === 'gps-camera') {
-                console.log('gps-camera initialized');
-            }
-        });
-
-        // gps-camera のエラーや状態を監視
-        document.querySelector('a-camera').addEventListener('gps-camera-error', (event) => {
-            console.error('gps-camera error:', event.detail);
-        });
 
         // gps-camera の位置情報取得状況を定期的に確認
         setInterval(() => {
@@ -76,6 +66,7 @@
                     // 距離を計算
                     const distance = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude, modelLongitude);
                     console.log(distance);
+                    document.querySelector('.text').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfjakldfjdaskf" + distance;
                     // 一定の距離 (例: 50メートル) に近づいたら表示
                     const model = document.querySelector('#goat-model');
                     if (distance <= 10) {
