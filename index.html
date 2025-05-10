@@ -50,10 +50,18 @@
             return R * c; // 距離 (メートル)
         }
 
+        function test() {
+            navigator.geolocation.getCurrentPosition(test2);
+        }
+
         // ユーザーの現在位置を監視
         window.setTimeout(() => {
+            test();
+        },2000);        
+
+        function test2(position) {
             console.log("GPS position updated");
-            const userLatitude = event.detail.position.latitude;
+            const userLatitude = position.coords.latitude;
             const userLongitude = event.detail.position.longitude;
 
             // モデルの位置
@@ -70,7 +78,7 @@
             } else {
                 model.setAttribute('visible', 'false');
             }
-        }, 2000);
+        }
     </script>
 </body>
 </html>
