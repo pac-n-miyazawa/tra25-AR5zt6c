@@ -10,7 +10,7 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <h4>AR.js + A-Frame + GPS!!!!!!!!!!!!!XS</h4>
+    <h4>AR.js + A-Frame + GPS</h4>
     <a-scene renderer="logarithmicDepthBuffer: true;"
              embedded
              loading-screen="enabled: false;"
@@ -33,7 +33,7 @@
     </a-scene>
 
     <script>
-        console.log("start");
+        console.log("スタ");
         // 距離計算用の関数
         function calculateDistance(lat1, lon1, lat2, lon2) {
             const R = 6371e3; // 地球の半径 (メートル)
@@ -50,19 +50,28 @@
             return R * c; // 距離 (メートル)
         }
 
-        function test() {
-            navigator.geolocation.getCurrentPosition(test2);
-        }
-
         // ユーザーの現在位置を監視
-        window.setTimeout(() => {
-            test();
-        },2000);        
-
-        function test2(position) {
+        window.addEventListener('gps-camera-update-position', (event) => {
             console.log("GPS position updated");
-            const userLatitude = position.coords.latitude;
-            const userLongitude = position.coords.longitude;
+
+            navigator.geolocation.getCurrentPosition(function () {
+                console.log("位置情報取得成功");
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+                console.log("ユーザーの位置1:", latitude, longitude);
+            }, function () {
+                console.log("位置情報取得失敗");
+            }, {
+                enableHighAccuracy: true,
+                maximumAge: 0,
+                timeout: 5000
+            });
+
+            const userLatitude = event.detail.position.latitude;
+            const userLongitude = event.detail.position.longitude;
+
+            console.log("ユーザーの位置:", userLatitude, userLongitude);
 
             // モデルの位置
             const modelLatitude = 35.614904;
@@ -73,12 +82,12 @@
 
             // 一定の距離 (例: 50メートル) に近づいたら表示
             const model = document.querySelector('#goat-model');
-            if (distance <= 5) {
+            if (distance <= 10) {
                 model.setAttribute('visible', 'true');
             } else {
                 model.setAttribute('visible', 'false');
             }
-        }
+        });
     </script>
 </body>
 </html>
