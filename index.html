@@ -50,6 +50,38 @@
             return R * c; // 距離 (メートル)
         }
 
+
+        document.querySelector('a-camera').addEventListener('componentinitialized', (event) => {
+            if (event.detail.name === 'gps-camera') {
+                console.log('gps-camera initialized');
+            }
+        });
+
+        // gps-camera のエラーや状態を監視
+        document.querySelector('a-camera').addEventListener('gps-camera-error', (event) => {
+            console.error('gps-camera error:', event.detail);
+        });
+
+        // gps-camera の位置情報取得状況を定期的に確認
+        setInterval(() => {
+            const camera = document.querySelector('a-camera');
+            if (camera.components['gps-camera']) {
+                const gpsData = camera.components['gps-camera'].currentCoords;
+                if (gpsData) {
+                    console.log('Current GPS coordinates:', gpsData);
+                } else {
+                    console.log('GPS coordinates not available yet.');
+                }
+            } else {
+                console.log('gps-camera component not initialized yet.');
+            }
+        }, 5000); // 5秒ごとに確認
+
+        window.addEventListener('gps-camera-update-position', (event) => {
+            console.log('GPS position updated:', event.detail.position);
+        });
+
+
         // ユーザーの現在位置を監視
         window.addEventListener('gps-camera-update-position', (event) => {
             console.log("GPS position updated");
