@@ -51,7 +51,7 @@
         }
 
         // ユーザーの現在位置を監視
-        window.addEventListener('gps-camera-update-position', (event) => {
+        window.setTimeout(() => {
             console.log("GPS position updated");
             const userLatitude = event.detail.position.latitude;
             const userLongitude = event.detail.position.longitude;
@@ -70,7 +70,7 @@
             } else {
                 model.setAttribute('visible', 'false');
             }
-        });
+        }, 2000);
     </script>
 </body>
 </html>
