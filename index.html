@@ -62,7 +62,7 @@
         function test2(position) {
             console.log("GPS position updated");
             const userLatitude = position.coords.latitude;
-            const userLongitude = event.detail.position.longitude;
+            const userLongitude = position.coords.longitude;
 
             // ƒ‚ƒfƒ‹‚ÌˆÊ’u
             const modelLatitude = 35.614904;
