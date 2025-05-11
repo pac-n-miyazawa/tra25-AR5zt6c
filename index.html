@@ -63,8 +63,8 @@
                     const modelLatitude = 35.9073292;
                     const modelLongitude = 138.4489453;
 
-                    const modelLatitude_jitaku = 35.61495419443539;
-                    const modelLongitude_jitaku = 139.7217936554158;
+                    const modelLatitude_jitaku = 35.614904;
+                    const modelLongitude_jitaku = 139.721611;
 
                     // ‹——£‚ðŒvŽZ
                     const distance = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude, modelLongitude);
@@ -76,7 +76,7 @@
                     if (distance <= 10 || distance_jitaku <= 10) {
                         model.setAttribute('visible', 'true');
                     } else {
-                        model.setAttribute('visible', 'false');
+                        model.setAttribute('visible', 'true');
                     }
                 } else {
                     console.log('GPS coordinates not available yet.');
