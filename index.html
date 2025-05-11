@@ -26,7 +26,7 @@
                   gltf-model="#goat-asset"
                   scale="3.0 3.0 3.0"
                   gps-entity-place="latitude: 35.9073292; longitude: 138.4489453;"
-                  visible="false"></a-entity>
+                  visible="true"></a-entity>
 
         <!-- カメラ -->
         <a-camera gps-camera rotation-reader></a-camera>
@@ -73,11 +73,11 @@
                     document.querySelector('.text').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfjakldfjdaskf" + distance;
                     // 一定の距離 (例: 50メートル) に近づいたら表示
                     const model = document.querySelector('#goat-model');
-                    if (distance <= 10 || distance_jitaku <= 10) {
-                        model.setAttribute('visible', 'true');
-                    } else {
-                        model.setAttribute('visible', 'true');
-                    }
+                    //if (distance <= 10 || distance_jitaku <= 10) {
+                    //    model.setAttribute('visible', 'true');
+                    //} else {
+                        model.setAttribute('visible', 'false');
+                    //}
                 } else {
                     console.log('GPS coordinates not available yet.');
                 }
