@@ -63,13 +63,17 @@
                     const modelLatitude = 35.9073292;
                     const modelLongitude = 138.4489453;
 
+                    const modelLatitude_jitaku = 35.61495419443539;
+                    const modelLongitude_jitaku = 139.7217936554158;
+
                     // 距離を計算
                     const distance = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude, modelLongitude);
+                    const distance_jitaku = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude_jitaku, modelLongitude_jitaku);
                     console.log(distance);
                     document.querySelector('.text').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfjakldfjdaskf" + distance;
                     // 一定の距離 (例: 50メートル) に近づいたら表示
                     const model = document.querySelector('#goat-model');
-                    if (distance <= 10) {
+                    if (distance <= 10 || distance_jitaku <= 10) {
                         model.setAttribute('visible', 'true');
                     } else {
                         model.setAttribute('visible', 'false');
