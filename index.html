@@ -59,6 +59,14 @@
                   gps-entity-place="latitude: 35.9647161; longitude: 138.4672074;"
                   visible="false"></a-entity>
 
+        <a-entity id="cat-model2"
+                  look-at="[gps-camera]"
+                  animation-mixer="loop: repeat"
+                  gltf-model="#cat-asset"
+                  scale="3.0 3.0 3.0"
+                  gps-entity-place="latitude: 35.614904; longitude: 139.721611;">
+                  visible="false"></a-entity>
+
 
 
 
@@ -108,6 +116,7 @@
                     const distance_giraffe = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9657242, 138.4668413);
                     const distance_goat = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9657294, 138.4668933);
                     const distance_cat = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9647161, 138.4672074);
+                    const distance_cat2 = calculateDistance(gpsData.latitude, gpsData.longitude, 35.614904, 139.721611);
 
                     console.log(distance);
                     document.querySelector('.text_goat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja goat:" + distance_goat
@@ -116,9 +125,10 @@
                     document.querySelector('.text_giraffe').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja  animal:" + distance_giraffe
 
                     const model = document.querySelector('#goat-model');
-                    const model_jitaku = document.querySelector('#cat-model');
+                    const model_cat = document.querySelector('#cat-model');
                     const model_rhino = document.querySelector('#rhino-model');
                     const model_giraffe = document.querySelector('#giraffe-model');
+                    const model_cat2 = document.querySelector('#cat-model2');
                     // àÍíËÇÃãóó£ (ó·: 50ÉÅÅ[ÉgÉã) Ç…ãﬂÇ√Ç¢ÇΩÇÁï\é¶
                     if (distance <= 10 || distance_jitaku <= 10 || distance_goat <= 10) {
                         model.setAttribute('visible', 'true');
@@ -126,9 +136,9 @@
                         model.setAttribute('visible', 'false');
                     }
                     if (distance_cat <= 10) {
-                        model_jitaku.setAttribute('visible', 'true');
+                        model_cat.setAttribute('visible', 'true');
                     } else {
-                        model_jitaku.setAttribute('visible', 'false');
+                        model_cat.setAttribute('visible', 'false');
                     }
                     if (distance_rhino <= 10) {
                         model_rhino.setAttribute('visible', 'true');
@@ -140,6 +150,12 @@
                     } else {
                         model_giraffe.setAttribute('visible', 'false');
                     }
+                    if (distance_cat2 <= 10) {
+                        model_cat2.setAttribute('visible', 'true');
+                    } else {
+                        model_cat2.setAttribute('visible', 'false');
+                    }
+
                 } else {
                     console.log('GPS coordinates not available yet.');
                 }
