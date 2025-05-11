@@ -14,7 +14,6 @@
     <h4 class="text_giraffe">AR.js + A-Frame + GPS!!!!!! testfhadsifndfskfjndsf</h4>
     <h4 class="text_goat">AR.js + A-Frame + GPS!!!!!! testfhadsifndfskfjndsf</h4>
     <h4 class="text_cat">AR.js + A-Frame + GPS!!!!!! testfhadsifndfskfjndsf</h4>
-    <h4 class="text_cat2">AR.js + A-Frame + GPS!!!!!! testfhadsifndfskfjndsf</h4>
     <a-scene renderer="logarithmicDepthBuffer: true;"
              embedded
              loading-screen="enabled: false;"
@@ -120,7 +119,6 @@
                     const distance_cat = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9647161, 138.4672074);
                     const distance_cat2 = calculateDistance(gpsData.latitude, gpsData.longitude, 35.614904, 139.721611);
 
-                    console.log(distance);
                     document.querySelector('.text_goat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja goat:" + distance_goat;
                     document.querySelector('.text_cat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja cat:" + distance_cat;
                     document.querySelector('.text_rhino').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja go-cart:" + distance_rhino;
@@ -133,7 +131,7 @@
                     const model_giraffe = document.querySelector('#giraffe-model');
                     const model_cat2 = document.querySelector('#cat-model2');
                     // ˆê’è‚Ì‹——£ (—á: 50ƒ[ƒgƒ‹) ‚É‹ß‚Ã‚¢‚½‚ç•\Ž¦
-                    if (distance <= 10 || distance_jitaku <= 10 || distance_goat <= 10) {
+                    if (distance <= 10 || distance_goat <= 10) {
                         model.setAttribute('visible', 'true');
                     } else {
                         model.setAttribute('visible', 'false');
