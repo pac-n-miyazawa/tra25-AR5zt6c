@@ -14,6 +14,7 @@
     <h4 class="text_giraffe">AR.js + A-Frame + GPS!!!!!! testfhadsifndfskfjndsf</h4>
     <h4 class="text_goat">AR.js + A-Frame + GPS!!!!!! testfhadsifndfskfjndsf</h4>
     <h4 class="text_cat">AR.js + A-Frame + GPS!!!!!! testfhadsifndfskfjndsf</h4>
+    <h4 class="text_cat2">AR.js + A-Frame + GPS!!!!!! testfhadsifndfskfjndsf</h4>
     <a-scene renderer="logarithmicDepthBuffer: true;"
              embedded
              loading-screen="enabled: false;"
@@ -65,7 +66,8 @@
                   gltf-model="#cat-asset"
                   scale="3.0 3.0 3.0"
                   gps-entity-place="latitude: 35.614904; longitude: 139.721611;">
-                  visible="false"></a-entity>
+            visible="false">
+        </a-entity>
 
 
 
@@ -119,10 +121,11 @@
                     const distance_cat2 = calculateDistance(gpsData.latitude, gpsData.longitude, 35.614904, 139.721611);
 
                     console.log(distance);
-                    document.querySelector('.text_goat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja goat:" + distance_goat
-                    document.querySelector('.text_cat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja cat:" + distance_cat
-                    document.querySelector('.text_rhino').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja go-cart:" + distance_rhino
-                    document.querySelector('.text_giraffe').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja  animal:" + distance_giraffe
+                    document.querySelector('.text_goat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja goat:" + distance_goat;
+                    document.querySelector('.text_cat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja cat:" + distance_cat;
+                    document.querySelector('.text_rhino').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja go-cart:" + distance_rhino;
+                    document.querySelector('.text_giraffe').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja  animal:" + distance_giraffe;
+                    document.querySelector('.text_cat2').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja miyazawa_test:" + distance_cat2;
 
                     const model = document.querySelector('#goat-model');
                     const model_cat = document.querySelector('#cat-model');
