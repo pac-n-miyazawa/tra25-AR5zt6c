@@ -38,25 +38,22 @@
                       class="clickable"
                       gesture-handler></a-entity>
         </a-marker>-->
-
-        <!--<a-marker id="animated-marker2"
-                  type="pattern"
-                  preset="custom"
-                  url="assets/pattern-marker.patt"
-                  raycaster="objects: .clickable"
-                  emitevents="true"
-                  cursor="fuse: false; rayOrigin: mouse;"
-                  id="markerA">
-            <a-entity id="bowser-model2"
-                      scale="8.784805045491005 8.784805045491005 8.784805045491005"
-                      animation-mixer="loop: repeat"
-                      gltf-model="#cat-asset"
-                      class="clickable"
-                      gesture-handler></a-entity>
-        </a-marker>-->
-
-
-        <!--<a-entity camera></a-entity>
+<!--<a-marker id="animated-marker2"
+          type="pattern"
+          preset="custom"
+          url="assets/pattern-marker.patt"
+          raycaster="objects: .clickable"
+          emitevents="true"
+          cursor="fuse: false; rayOrigin: mouse;"
+          id="markerA">
+    <a-entity id="bowser-model2"
+              scale="8.784805045491005 8.784805045491005 8.784805045491005"
+              animation-mixer="loop: repeat"
+              gltf-model="#cat-asset"
+              class="clickable"
+              gesture-handler></a-entity>
+</a-marker>-->
+<!--<a-entity camera></a-entity>
     </a-scene>
 </body>
 </html>-->
@@ -88,10 +85,51 @@
         <a-entity look-at="[gps-camera]"
                   animation-mixer="loop: repeat"
                   gltf-model="#goat-asset"
-                  scale="10.0 10.0 10.0" 
+                  scale="10.0 10.0 10.0"
                   gps-entity-place="latitude: 35.614904; longitude: 139.721611;"></a-entity>
         <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
 </body>
 </html>
+
+
+        // ユーザーの現在位置を監視
+        window.addEventListener('gps-camera-update-position', (event) => {
+            console.log("GPS position updated");
+
+            navigator.geolocation.getCurrentPosition(function (position) {
+                console.log("位置情報取得成功");
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+
+
+            }, function () {
+                console.log("位置情報取得失敗");
+            }, {
+                enableHighAccuracy: true,
+                maximumAge: 0,
+                timeout: 5000
+            });
+
+            const userLatitude = event.detail.position.latitude;
+            const userLongitude = event.detail.position.longitude;
+
+            console.log("ユーザーの位置:", userLatitude, userLongitude);
+
+            // モデルの位置
+            const modelLatitude = 35.614904;
+            const modelLongitude = 139.721611;
+
+            // 距離を計算
+            const distance = calculateDistance(userLatitude, userLongitude, modelLatitude, modelLongitude);
+
+            // 一定の距離 (例: 50メートル) に近づいたら表示
+            const model = document.querySelector('#goat-model');
+            if (distance <= 10) {
+                model.setAttribute('visible', 'true');
+            } else {
+                model.setAttribute('visible', 'false');
+            }
+        });
 

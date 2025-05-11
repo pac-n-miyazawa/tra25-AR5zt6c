@@ -60,8 +60,8 @@
                 if (gpsData) {
                     console.log('Current GPS coordinates:', gpsData);
 
-                    const modelLatitude = 35.614904;
-                    const modelLongitude = 139.721611;
+                    const modelLatitude = 35.9073292;
+                    const modelLongitude = 138.4489453;
 
                     // 距離を計算
                     const distance = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude, modelLongitude);
@@ -87,45 +87,6 @@
         });
 
 
-        // ユーザーの現在位置を監視
-        window.addEventListener('gps-camera-update-position', (event) => {
-            console.log("GPS position updated");
-
-            navigator.geolocation.getCurrentPosition(function (position) {
-                console.log("位置情報取得成功");
-                var latitude = position.coords.latitude;
-                var longitude = position.coords.longitude;
-
-            
-
-            }, function () {
-                console.log("位置情報取得失敗");
-            }, {
-                enableHighAccuracy: true,
-                maximumAge: 0,
-                timeout: 5000
-            });
-
-            const userLatitude = event.detail.position.latitude;
-            const userLongitude = event.detail.position.longitude;
-
-            console.log("ユーザーの位置:", userLatitude, userLongitude);
-
-            // モデルの位置
-            const modelLatitude = 35.614904;
-            const modelLongitude = 139.721611;
-
-            // 距離を計算
-            const distance = calculateDistance(userLatitude, userLongitude, modelLatitude, modelLongitude);
-
-            // 一定の距離 (例: 50メートル) に近づいたら表示
-            const model = document.querySelector('#goat-model');
-            if (distance <= 10) {
-                model.setAttribute('visible', 'true');
-            } else {
-                model.setAttribute('visible', 'false');
-            }
-        });
     </script>
 </body>
 </html>
