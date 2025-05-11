@@ -24,8 +24,8 @@
                   look-at="[gps-camera]"
                   animation-mixer="loop: repeat"
                   gltf-model="#goat-asset"
-                  scale="10.0 10.0 10.0"
-                  gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
+                  scale="3.0 3.0 3.0"
+                  gps-entity-place="latitude: 35.9073292; longitude: 138.4489453;"
                   visible="false"></a-entity>
 
         <!-- カメラ -->
@@ -80,7 +80,7 @@
             } else {
                 console.log('gps-camera component not initialized yet.');
             }
-        }, 5000); // 5秒ごとに確認
+        }, 2000); // 2秒ごとに確認
 
         window.addEventListener('gps-camera-update-position', (event) => {
             console.log('GPS position updated:', event.detail.position);
