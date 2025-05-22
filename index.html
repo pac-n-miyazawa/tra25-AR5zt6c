@@ -25,7 +25,7 @@
             <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
         </a-assets>
 
-        <!-- 3Dƒ‚ƒfƒ‹ -->
+        <!-- 3Dãƒ¢ãƒ‡ãƒ« -->
         <a-entity id="rhino-model"
                   look-at="[gps-camera]"
                   animation-mixer="loop: repeat"
@@ -71,15 +71,15 @@
 
 
 
-        <!-- ƒJƒƒ‰ -->
+        <!-- ã‚«ãƒ¡ãƒ© -->
         <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
 
     <script>
-        console.log("ƒXƒ^");
-        // ‹——£ŒvZ—p‚ÌŠÖ”
+        console.log("ã‚¹ã‚¿");
+        // è·é›¢è¨ˆç®—ç”¨ã®é–¢æ•°
         function calculateDistance(lat1, lon1, lat2, lon2) {
-            const R = 6371e3; // ’n‹…‚Ì”¼Œa (ƒ[ƒgƒ‹)
+            const R = 6371e3; // åœ°çƒã®åŠå¾„ (ãƒ¡ãƒ¼ãƒˆãƒ«)
             const phi1 = lat1 * Math.PI / 180;
             const phi2 = lat2 * Math.PI / 180;
             const dp = (lat2 - lat1) * Math.PI / 180;
@@ -90,12 +90,12 @@
                 Math.sin(dr / 2) * Math.sin(dr / 2);
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-            return R * c; // ‹——£ (ƒ[ƒgƒ‹)
+            return R * c; // è·é›¢ (ãƒ¡ãƒ¼ãƒˆãƒ«)
         }
 
 
 
-        // gps-camera ‚ÌˆÊ’uî•ñæ“¾ó‹µ‚ğ’èŠú“I‚ÉŠm”F
+        // gps-camera ã®ä½ç½®æƒ…å ±å–å¾—çŠ¶æ³ã‚’å®šæœŸçš„ã«ç¢ºèª
         setInterval(() => {
             const camera = document.querySelector('a-camera');
             if (camera.components['gps-camera']) {
@@ -109,7 +109,7 @@
                     const modelLatitude_jitaku = 35.614904;
                     const modelLongitude_jitaku = 139.721611;
 
-                    // ‹——£‚ğŒvZ
+                    // è·é›¢ã‚’è¨ˆç®—
                     const distance = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude, modelLongitude);
                     const distance_jitaku = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude_jitaku, modelLongitude_jitaku);
 
@@ -130,7 +130,7 @@
                     const model_rhino = document.querySelector('#rhino-model');
                     const model_giraffe = document.querySelector('#giraffe-model');
                     const model_cat2 = document.querySelector('#cat-model2');
-                    // ˆê’è‚Ì‹——£ (—á: 50ƒ[ƒgƒ‹) ‚É‹ß‚Ã‚¢‚½‚ç•\¦
+                    // ä¸€å®šã®è·é›¢ (ä¾‹: 50ãƒ¡ãƒ¼ãƒˆãƒ«) ã«è¿‘ã¥ã„ãŸã‚‰è¡¨ç¤º
                     if (distance <= 10 || distance_goat <= 10) {
                         model.setAttribute('visible', 'true');
                     } else {
@@ -163,7 +163,7 @@
             } else {
                 console.log('gps-camera component not initialized yet.');
             }
-        }, 2000); // 2•b‚²‚Æ‚ÉŠm”F
+        }, 2000); // 2ç§’ã”ã¨ã«ç¢ºèª
 
         window.addEventListener('gps-camera-update-position', (event) => {
             console.log('GPS position updated:', event.detail.position);
