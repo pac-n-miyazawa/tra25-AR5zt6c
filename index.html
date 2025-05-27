@@ -31,15 +31,15 @@
             <a-asset-item id="rhino-asset" src="assets/rhino.glb"></a-asset-item>
             <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
         </a-assets>
-        
-        
+
+
         <a-entity id="cat-model2"
-          look-at="[gps-camera]"
-          animation-mixer="loop: repeat"
-          gltf-model="#cat-asset"
-          scale="3.0 3.0 3.0"
-          gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
-          visible="false"></a-entity>
+                  look-at="[gps-camera]"
+                  animation-mixer="loop: repeat"
+                  gltf-model="#cat-asset"
+                  scale="3.0 3.0 3.0"
+                  gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
+                  visible="false"></a-entity>
 
 
         <a-marker id="animated-marker"
@@ -58,11 +58,12 @@
                       gesture-handler></a-entity>
         </a-marker>
 
-        <a-entity camera></a-entity>
+        <!--<a-entity camera></a-entity>-->
+        <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
 </body>
 
-<!--<body style="margin: 0; overflow: hidden;">
+<body style="margin: 0; overflow: hidden;">
     <h4 class="text_cat2">AR.js + A-Frame</h4>
     <a-scene vr-mode-ui="enabled: false;"
              renderer="logarithmicDepthBuffer: true;"
@@ -74,10 +75,10 @@
             <a-asset-item id="cat-asset" src="assets/cat.glb"></a-asset-item>
             <a-asset-item id="rhino-asset" src="assets/newRhino.glb"></a-asset-item>
             <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
-        </a-assets>-->
+        </a-assets>
 
-        <!-- gpsモデル -->
-        <!--<a-entity id="rhino-model"
+         <!--gpsモデル--> 
+        <a-entity id="rhino-model"
                   look-at="[gps-camera]"
                   animation-mixer="loop: repeat"
                   gltf-model="#rhino-asset"
@@ -116,9 +117,9 @@
                   gltf-model="#cat-asset"
                   scale="3.0 3.0 3.0"
                   gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
-                  visible="false"></a-entity>-->
-        <!-- markerモデル -->
-        <!--<a-marker id="cat-marker"
+                  visible="false"></a-entity>
+         <!--markerモデル--> 
+        <a-marker id="cat-marker"
                   type="pattern"
                   preset="custom"
                   url="assets/1.patt"
@@ -146,9 +147,9 @@
                       gltf-model="#rhino-asset"
                       class="clickable"
                       gesture-handler></a-entity>
-        </a-marker>-->
+        </a-marker>
 
-        <!--<a-marker id="cat-marker3"
+        <a-marker id="cat-marker3"
                   type="pattern"
                   preset="custom"
                   url="assets/3.patt"
@@ -176,9 +177,9 @@
                       gltf-model="#goat-asset"
                       class="clickable"
                       gesture-handler></a-entity>
-        </a-marker>-->
-        <!-- カメラ -->
-        <!--<a-camera gps-camera rotation-reader></a-camera>
+        </a-marker>
+         カメラ 
+        <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
 
     <script>
@@ -276,5 +277,5 @@
 
 
     </script>
-</body>-->
+</body>
 </html>
