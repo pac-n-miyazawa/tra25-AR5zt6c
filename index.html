@@ -10,11 +10,7 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <!--<h4 class="text_rhino">AR.js + A-Frame </h4>
-    <h4 class="text_giraffe">AR.js + A-Frame</h4>
-    <h4 class="text_goat">AR.js + A-Frame</h4>
-    <h4 class="text_cat">AR.js + A-Frame</h4>-->
-    <h4 class="text_cat2">AR.js + A-Frame</h4>
+    <h4 class="text_cat2">AR.js + A-Frame!!!!!!!!!!!!!!</h4>
     <a-scene renderer="logarithmicDepthBuffer: true;"
              embedded
              loading-screen="enabled: false;"
@@ -26,7 +22,7 @@
             <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
         </a-assets>
 
-        <!-- 3Dモデル -->
+        <!-- gpsモデル -->
         <a-entity id="rhino-model"
                   look-at="[gps-camera]"
                   animation-mixer="loop: repeat"
@@ -69,30 +65,43 @@
                   visible="false"></a-entity>
 
 
-
-        <a-marker id="animated-marker"
-                  type="pattern"
-                  preset="custom"
-                  url="assets/marker.patt"
-                  raycaster="objects: .clickable"
-                  emitevents="true"
-                  cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="cat-model3"
-                      scale="3.0 3.0 3.0"
-                      animation-mixer="loop: repeat"
-                      gltf-model="#cat-asset"
-                      class="clickable"
-                      gesture-handler></a-entity>
+        <!-- markerモデル -->
+        <a-marker id="cat-marker" type="pattern" preset="custom" url="assets/1.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="cat-model3" scale="3.0 3.0 3.0" animation-mixer="loop: repeat" gltf-model="#cat-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
 
+        <a-marker id="rhino-marker" type="pattern" preset="custom" url="assets/2.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="rhino-model3" rotation="45 90 180" scale="3.0 3.0 3.0" animation-mixer="loop: repeat" gltf-model="#rhino-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
 
+        <a-marker id="goat-marker" type="pattern" preset="custom" url="assets/3.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="goat-model3" rotation="0 0 0" scale="3.0 3.0 3.0" animation-mixer="loop: repeat" gltf-model="#goat-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
 
+        <a-marker id="giraffe-marker" type="pattern" preset="custom" url="assets/4.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="giraffe-model3" rotation="90 0 0" scale="3.0 3.0 3.0" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
+
+        <a-marker id="giraffe-marker2" type="pattern" preset="custom" url="assets/5.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="giraffe-model31" rotation="0 90 0" scale="3.0 3.0 3.0" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
+
+        <a-marker id="giraffe-marker3" type="pattern" preset="custom" url="assets/6.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="giraffe-model32" rotation="0 0 90" scale="3.0 3.0 3.0" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
+
+        <!--<a-marker id="cat-marker" type="pattern" preset="custom" url="assets/marker.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="cat-model3" scale="3.0 3.0 3.0" animation-mixer="loop: repeat" gltf-model="#cat-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>
+
+    <a-marker id="cat-marker" type="pattern" preset="custom" url="assets/marker.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="cat-model3" scale="3.0 3.0 3.0" animation-mixer="loop: repeat" gltf-model="#cat-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>-->
         <!-- カメラ -->
         <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
 
     <script>
-        console.log("スタ");
         // 距離計算用の関数
         function calculateDistance(lat1, lon1, lat2, lon2) {
             const R = 6371e3; // 地球の半径 (メートル)
