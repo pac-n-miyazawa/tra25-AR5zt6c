@@ -24,9 +24,21 @@
              embedded
              gesture-detector>
         <a-assets>
-            <a-asset-item id="animated-asset"
-                          src="assets/rhino.glb"></a-asset-item>
+            <a-asset-item id="goat-asset" src="assets/goat.glb"></a-asset-item>
+            <a-asset-item id="cat-asset" src="assets/cat.glb"></a-asset-item>
+            <a-asset-item id="rhino-asset" src="assets/rhino.glb"></a-asset-item>
+            <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
         </a-assets>
+        
+        
+        <a-entity id="cat-model2"
+          look-at="[gps-camera]"
+          animation-mixer="loop: repeat"
+          gltf-model="#cat-asset"
+          scale="3.0 3.0 3.0"
+          gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
+          visible="false"></a-entity>
+
 
         <a-marker id="animated-marker"
                   type="pattern"
@@ -37,9 +49,9 @@
                   cursor="fuse: false; rayOrigin: mouse;"
                   id="markerA">
             <a-entity id="bowser-model"
-                      scale="2.000013113107827 2.000013113107827 2.000013113107827"
+                      scale="3.0 3.0 3.0"
                       animation-mixer="loop: repeat"
-                      gltf-model="#animated-asset"
+                      gltf-model="#rhino-asset"
                       class="clickable"
                       gesture-handler></a-entity>
         </a-marker>
