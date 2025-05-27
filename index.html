@@ -121,74 +121,74 @@
 
 
         // gps-camera の位置情報取得状況を定期的に確認
-        setInterval(() => {
-            const camera = document.querySelector('a-camera');
-            if (camera.components['gps-camera']) {
-                const gpsData = camera.components['gps-camera'].currentCoords;
-                if (gpsData) {
-                    console.log('Current GPS coordinates:', gpsData);
+        //setInterval(() => {
+        //    const camera = document.querySelector('a-camera');
+        //    if (camera.components['gps-camera']) {
+        //        const gpsData = camera.components['gps-camera'].currentCoords;
+        //        if (gpsData) {
+        //            console.log('Current GPS coordinates:', gpsData);
 
-                    const modelLatitude = 35.9073292;
-                    const modelLongitude = 138.4489453;
+        //            const modelLatitude = 35.9073292;
+        //            const modelLongitude = 138.4489453;
 
-                    const modelLatitude_jitaku = 35.614904;
-                    const modelLongitude_jitaku = 139.721611;
+        //            const modelLatitude_jitaku = 35.614904;
+        //            const modelLongitude_jitaku = 139.721611;
 
-                    // 距離を計算
-                    const distance = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude, modelLongitude);
-                    const distance_jitaku = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude_jitaku, modelLongitude_jitaku);
+        //            // 距離を計算
+        //            const distance = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude, modelLongitude);
+        //            const distance_jitaku = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude_jitaku, modelLongitude_jitaku);
 
-                    const distance_rhino = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9658314, 138.4665064);
-                    const distance_giraffe = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9657242, 138.4668413);
-                    const distance_goat = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9657294, 138.4668933);
-                    const distance_cat = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9647161, 138.4672074);
-                    const distance_cat2 = calculateDistance(gpsData.latitude, gpsData.longitude, 35.614904, 139.721611);
+        //            const distance_rhino = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9658314, 138.4665064);
+        //            const distance_giraffe = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9657242, 138.4668413);
+        //            const distance_goat = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9657294, 138.4668933);
+        //            const distance_cat = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9647161, 138.4672074);
+        //            const distance_cat2 = calculateDistance(gpsData.latitude, gpsData.longitude, 35.614904, 139.721611);
 
-                    document.querySelector('.text_goat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja goat:" + distance_goat;
-                    document.querySelector('.text_cat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja cat:" + distance_cat;
-                    document.querySelector('.text_rhino').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja go-cart:" + distance_rhino;
-                    document.querySelector('.text_giraffe').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja  animal:" + distance_giraffe;
-                    document.querySelector('.text_cat2').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja miyazawa_test:" + distance_cat2;
+        //            document.querySelector('.text_goat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja goat:" + distance_goat;
+        //            document.querySelector('.text_cat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja cat:" + distance_cat;
+        //            document.querySelector('.text_rhino').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja go-cart:" + distance_rhino;
+        //            document.querySelector('.text_giraffe').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja  animal:" + distance_giraffe;
+        //            document.querySelector('.text_cat2').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja miyazawa_test:" + distance_cat2;
 
-                    const model = document.querySelector('#goat-model');
-                    const model_cat = document.querySelector('#cat-model');
-                    const model_rhino = document.querySelector('#rhino-model');
-                    const model_giraffe = document.querySelector('#giraffe-model');
-                    const model_cat2 = document.querySelector('#cat-model2');
-                    // 一定の距離 (例: 50メートル) に近づいたら表示
-                    if (distance <= 10 || distance_goat <= 10) {
-                        model.setAttribute('visible', 'true');
-                    } else {
-                        model.setAttribute('visible', 'false');
-                    }
-                    if (distance_cat <= 10) {
-                        model_cat.setAttribute('visible', 'true');
-                    } else {
-                        model_cat.setAttribute('visible', 'false');
-                    }
-                    if (distance_rhino <= 10) {
-                        model_rhino.setAttribute('visible', 'true');
-                    } else {
-                        model_rhino.setAttribute('visible', 'false');
-                    }
-                    if (distance_giraffe <= 10) {
-                        model_giraffe.setAttribute('visible', 'true');
-                    } else {
-                        model_giraffe.setAttribute('visible', 'false');
-                    }
-                    if (distance_cat2 <= 15) {
-                        model_cat2.setAttribute('visible', 'true');
-                    } else {
-                        model_cat2.setAttribute('visible', 'false');
-                    }
+        //            const model = document.querySelector('#goat-model');
+        //            const model_cat = document.querySelector('#cat-model');
+        //            const model_rhino = document.querySelector('#rhino-model');
+        //            const model_giraffe = document.querySelector('#giraffe-model');
+        //            const model_cat2 = document.querySelector('#cat-model2');
+        //            // 一定の距離 (例: 50メートル) に近づいたら表示
+        //            if (distance <= 10 || distance_goat <= 10) {
+        //                model.setAttribute('visible', 'true');
+        //            } else {
+        //                model.setAttribute('visible', 'false');
+        //            }
+        //            if (distance_cat <= 10) {
+        //                model_cat.setAttribute('visible', 'true');
+        //            } else {
+        //                model_cat.setAttribute('visible', 'false');
+        //            }
+        //            if (distance_rhino <= 10) {
+        //                model_rhino.setAttribute('visible', 'true');
+        //            } else {
+        //                model_rhino.setAttribute('visible', 'false');
+        //            }
+        //            if (distance_giraffe <= 10) {
+        //                model_giraffe.setAttribute('visible', 'true');
+        //            } else {
+        //                model_giraffe.setAttribute('visible', 'false');
+        //            }
+        //            if (distance_cat2 <= 15) {
+        //                model_cat2.setAttribute('visible', 'true');
+        //            } else {
+        //                model_cat2.setAttribute('visible', 'false');
+        //            }
 
-                } else {
-                    console.log('GPS coordinates not available yet.');
-                }
-            } else {
-                console.log('gps-camera component not initialized yet.');
-            }
-        }, 2000); // 2秒ごとに確認
+        //        } else {
+        //            console.log('GPS coordinates not available yet.');
+        //        }
+        //    } else {
+        //        console.log('gps-camera component not initialized yet.');
+        //    }
+        //}, 2000); // 2秒ごとに確認
 
         window.addEventListener('gps-camera-update-position', (event) => {
             console.log('GPS position updated:', event.detail.position);
