@@ -70,6 +70,21 @@
 
 
 
+        <a-marker id="animated-marker"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/marker.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="cat-model3"
+                      scale="3.0 3.0 3.0"
+                      animation-mixer="loop: repeat"
+                      gltf-model="#cat-asset"
+                      class="clickable"
+                      gesture-handler></a-entity>
+        </a-marker>
+
 
 
         <!-- カメラ -->
