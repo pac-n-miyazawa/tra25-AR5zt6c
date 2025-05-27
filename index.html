@@ -1,21 +1,56 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <!--<script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>-->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
 </head>
 
 <body style="margin: 0; overflow: hidden;">
+    <a-scene vr-mode-ui="enabled: false;"
+             loading-screen="enabled: false;"
+             renderer="logarithmicDepthBuffer: true;"
+             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+             id="scene"
+             embedded
+             gesture-detector>
+        <a-assets>
+            <a-asset-item id="animated-asset"
+                          src="assets/asset.glb"></a-asset-item>
+        </a-assets>
+
+        <a-marker id="animated-marker"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/1.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;"
+                  id="markerA">
+            <a-entity id="bowser-model"
+                      scale="2.000013113107827 2.000013113107827 2.000013113107827"
+                      animation-mixer="loop: repeat"
+                      gltf-model="#animated-asset"
+                      class="clickable"
+                      gesture-handler></a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+<!--<body style="margin: 0; overflow: hidden;">
     <h4 class="text_cat2">AR.js + A-Frame</h4>
-    <a-scene 
-             vr-mode-ui="enabled: false;"
+    <a-scene vr-mode-ui="enabled: false;"
              renderer="logarithmicDepthBuffer: true;"
              embedded
              loading-screen="enabled: false;"
@@ -25,51 +60,51 @@
             <a-asset-item id="cat-asset" src="assets/cat.glb"></a-asset-item>
             <a-asset-item id="rhino-asset" src="assets/newRhino.glb"></a-asset-item>
             <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
-        </a-assets>
+        </a-assets>-->
 
         <!-- gpsモデル -->
         <!--<a-entity id="rhino-model"
-              look-at="[gps-camera]"
-              animation-mixer="loop: repeat"
-              gltf-model="#rhino-asset"
-              scale="3.0 3.0 3.0"
-              gps-entity-place="latitude: 35.9658314; longitude: 138.4665064;"
-              visible="false"></a-entity>
+                  look-at="[gps-camera]"
+                  animation-mixer="loop: repeat"
+                  gltf-model="#rhino-asset"
+                  scale="3.0 3.0 3.0"
+                  gps-entity-place="latitude: 35.9658314; longitude: 138.4665064;"
+                  visible="false"></a-entity>
 
-    <a-entity id="giraffe-model"
-              look-at="[gps-camera]"
-              animation-mixer="loop: repeat"
-              gltf-model="#giraffe-asset"
-              scale="3.0 3.0 3.0"
-              gps-entity-place="latitude: 35.9657242; longitude: 138.4668413;"
-              visible="false"></a-entity>
+        <a-entity id="giraffe-model"
+                  look-at="[gps-camera]"
+                  animation-mixer="loop: repeat"
+                  gltf-model="#giraffe-asset"
+                  scale="3.0 3.0 3.0"
+                  gps-entity-place="latitude: 35.9657242; longitude: 138.4668413;"
+                  visible="false"></a-entity>
 
-    <a-entity id="goat-model"
-              look-at="[gps-camera]"
-              animation-mixer="loop: repeat"
-              gltf-model="#goat-asset"
-              scale="3.0 3.0 3.0"
-              gps-entity-place="latitude: 35.9657294; longitude: 138.4668933;"
-              visible="false"></a-entity>
+        <a-entity id="goat-model"
+                  look-at="[gps-camera]"
+                  animation-mixer="loop: repeat"
+                  gltf-model="#goat-asset"
+                  scale="3.0 3.0 3.0"
+                  gps-entity-place="latitude: 35.9657294; longitude: 138.4668933;"
+                  visible="false"></a-entity>
 
 
-    <a-entity id="cat-model"
-              look-at="[gps-camera]"
-              animation-mixer="loop: repeat"
-              gltf-model="#cat-asset"
-              scale="3.0 3.0 3.0"
-              gps-entity-place="latitude: 35.9647161; longitude: 138.4672074;"
-              visible="false"></a-entity>
+        <a-entity id="cat-model"
+                  look-at="[gps-camera]"
+                  animation-mixer="loop: repeat"
+                  gltf-model="#cat-asset"
+                  scale="3.0 3.0 3.0"
+                  gps-entity-place="latitude: 35.9647161; longitude: 138.4672074;"
+                  visible="false"></a-entity>
 
-    <a-entity id="cat-model2"
-              look-at="[gps-camera]"
-              animation-mixer="loop: repeat"
-              gltf-model="#cat-asset"
-              scale="3.0 3.0 3.0"
-              gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
-              visible="false"></a-entity>-->
+        <a-entity id="cat-model2"
+                  look-at="[gps-camera]"
+                  animation-mixer="loop: repeat"
+                  gltf-model="#cat-asset"
+                  scale="3.0 3.0 3.0"
+                  gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
+                  visible="false"></a-entity>-->
         <!-- markerモデル -->
-        <a-marker id="cat-marker"
+        <!--<a-marker id="cat-marker"
                   type="pattern"
                   preset="custom"
                   url="assets/1.patt"
@@ -97,7 +132,7 @@
                       gltf-model="#rhino-asset"
                       class="clickable"
                       gesture-handler></a-entity>
-        </a-marker>
+        </a-marker>-->
 
         <!--<a-marker id="cat-marker3"
                   type="pattern"
@@ -128,11 +163,8 @@
                       class="clickable"
                       gesture-handler></a-entity>
         </a-marker>-->
-
-
-
         <!-- カメラ -->
-        <a-camera gps-camera rotation-reader></a-camera>
+        <!--<a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
 
     <script>
@@ -230,5 +262,5 @@
 
 
     </script>
-</body>
+</body>-->
 </html>
