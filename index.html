@@ -48,8 +48,7 @@
                   url="assets/1_new.patt"
                   raycaster="objects: .clickable"
                   emitevents="true"
-                  cursor="fuse: false; rayOrigin: mouse;"
-                  id="markerA">
+                  cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="bowser-model"
                       scale="3.0 3.0 3.0"
                       animation-mixer="loop: repeat"
@@ -58,8 +57,38 @@
                       gesture-handler></a-entity>
         </a-marker>
 
+        <a-marker id="goat-marker"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/2.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="goat-model"
+                      scale="2.0 2.0 2.0"
+                      animation-mixer="loop: repeat"
+                      gltf-model="#goat-asset"
+                      class="clickable"
+                      gesture-handler></a-entity>
+        </a-marker>
+
+        <a-marker id="cat-marker"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/3.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="cat-model"
+                      scale="3.0 3.0 3.0"
+                      animation-mixer="loop: repeat"
+                      gltf-model="#cat-asset"
+                      class="clickable"
+                      gesture-handler></a-entity>
+        </a-marker>
+
         <!--<a-camera gps-camera rotation-reader></a-camera>-->
-        <a-entity camera gps-camera rotation-reader></a-entity>
+        <a-entity camera gps-camera arjs-look-controls='smoothingFactor: 0.1' rotation-reader></a-entity>
     </a-scene>
 </body>
 
