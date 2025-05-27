@@ -24,47 +24,45 @@
 
         <!-- gpsモデル -->
         <!--<a-entity id="rhino-model"
-                  look-at="[gps-camera]"
-                  animation-mixer="loop: repeat"
-                  gltf-model="#rhino-asset"
-                  scale="3.0 3.0 3.0"
-                  gps-entity-place="latitude: 35.9658314; longitude: 138.4665064;"
-                  visible="false"></a-entity>
+              look-at="[gps-camera]"
+              animation-mixer="loop: repeat"
+              gltf-model="#rhino-asset"
+              scale="3.0 3.0 3.0"
+              gps-entity-place="latitude: 35.9658314; longitude: 138.4665064;"
+              visible="false"></a-entity>
 
-        <a-entity id="giraffe-model"
-                  look-at="[gps-camera]"
-                  animation-mixer="loop: repeat"
-                  gltf-model="#giraffe-asset"
-                  scale="3.0 3.0 3.0"
-                  gps-entity-place="latitude: 35.9657242; longitude: 138.4668413;"
-                  visible="false"></a-entity>
+    <a-entity id="giraffe-model"
+              look-at="[gps-camera]"
+              animation-mixer="loop: repeat"
+              gltf-model="#giraffe-asset"
+              scale="3.0 3.0 3.0"
+              gps-entity-place="latitude: 35.9657242; longitude: 138.4668413;"
+              visible="false"></a-entity>
 
-        <a-entity id="goat-model"
-                  look-at="[gps-camera]"
-                  animation-mixer="loop: repeat"
-                  gltf-model="#goat-asset"
-                  scale="3.0 3.0 3.0"
-                  gps-entity-place="latitude: 35.9657294; longitude: 138.4668933;"
-                  visible="false"></a-entity>
-
-
-        <a-entity id="cat-model"
-                  look-at="[gps-camera]"
-                  animation-mixer="loop: repeat"
-                  gltf-model="#cat-asset"
-                  scale="3.0 3.0 3.0"
-                  gps-entity-place="latitude: 35.9647161; longitude: 138.4672074;"
-                  visible="false"></a-entity>
-
-        <a-entity id="cat-model2"
-                  look-at="[gps-camera]"
-                  animation-mixer="loop: repeat"
-                  gltf-model="#cat-asset"
-                  scale="3.0 3.0 3.0"
-                  gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
-                  visible="false"></a-entity>-->
+    <a-entity id="goat-model"
+              look-at="[gps-camera]"
+              animation-mixer="loop: repeat"
+              gltf-model="#goat-asset"
+              scale="3.0 3.0 3.0"
+              gps-entity-place="latitude: 35.9657294; longitude: 138.4668933;"
+              visible="false"></a-entity>
 
 
+    <a-entity id="cat-model"
+              look-at="[gps-camera]"
+              animation-mixer="loop: repeat"
+              gltf-model="#cat-asset"
+              scale="3.0 3.0 3.0"
+              gps-entity-place="latitude: 35.9647161; longitude: 138.4672074;"
+              visible="false"></a-entity>
+
+    <a-entity id="cat-model2"
+              look-at="[gps-camera]"
+              animation-mixer="loop: repeat"
+              gltf-model="#cat-asset"
+              scale="3.0 3.0 3.0"
+              gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
+              visible="false"></a-entity>-->
         <!-- markerモデル -->
         <a-marker id="cat-marker"
                   type="pattern"
@@ -74,6 +72,51 @@
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="cat-model3"
+                      scale="3.0 3.0 3.0"
+                      animation-mixer="loop: repeat"
+                      gltf-model="#goat-asset"
+                      class="clickable"
+                      gesture-handler></a-entity>
+        </a-marker>
+
+        <a-marker id="cat-marker2"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/2.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="cat-mode32"
+                      scale="3.0 3.0 3.0"
+                      animation-mixer="loop: repeat"
+                      gltf-model="#goat-asset"
+                      class="clickable"
+                      gesture-handler></a-entity>
+        </a-marker>
+
+        <a-marker id="cat-marker3"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/3.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="cat-model33"
+                      scale="3.0 3.0 3.0"
+                      animation-mixer="loop: repeat"
+                      gltf-model="#goat-asset"
+                      class="clickable"
+                      gesture-handler></a-entity>
+        </a-marker>
+
+        <a-marker id="cat-marker4"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/4.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="cat-model34"
                       scale="3.0 3.0 3.0"
                       animation-mixer="loop: repeat"
                       gltf-model="#goat-asset"
