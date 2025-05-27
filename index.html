@@ -58,12 +58,12 @@
                       gesture-handler></a-entity>
         </a-marker>
 
-        <a-entity camera></a-entity>
-        <!--<a-camera gps-camera rotation-reader></a-camera>-->
+        <a-camera gps-camera rotation-reader></a-camera>
+        <!--<a-entity camera></a-entity>-->
     </a-scene>
 </body>
 
-<body style="margin: 0; overflow: hidden;">
+<!--<body style="margin: 0; overflow: hidden;">
     <h4 class="text_cat2">AR.js + A-Frame</h4>
     <a-scene vr-mode-ui="enabled: false;"
              renderer="logarithmicDepthBuffer: true;"
@@ -75,10 +75,10 @@
             <a-asset-item id="cat-asset" src="assets/cat.glb"></a-asset-item>
             <a-asset-item id="rhino-asset" src="assets/newRhino.glb"></a-asset-item>
             <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
-        </a-assets>
+        </a-assets>-->
 
          <!--gpsモデル--> 
-        <a-entity id="rhino-model"
+        <!--<a-entity id="rhino-model"
                   look-at="[gps-camera]"
                   animation-mixer="loop: repeat"
                   gltf-model="#rhino-asset"
@@ -117,9 +117,9 @@
                   gltf-model="#cat-asset"
                   scale="3.0 3.0 3.0"
                   gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
-                  visible="false"></a-entity>
+                  visible="false"></a-entity>-->
          <!--markerモデル--> 
-        <a-marker id="cat-marker"
+        <!--<a-marker id="cat-marker"
                   type="pattern"
                   preset="custom"
                   url="assets/1.patt"
@@ -277,5 +277,5 @@
 
 
     </script>
-</body>
+</body>-->
 </html>
