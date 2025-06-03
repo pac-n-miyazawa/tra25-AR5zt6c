@@ -44,21 +44,21 @@
     visible="true"></a-entity>-->
 
 
-        <a-marker id="animated-marker"
+        <a-marker id="hosaka-marker"
                   type="pattern"
                   preset="custom"
-                  url="assets/1_new.patt"
+                  url="assets/marker/pattern-1.patt"
                   raycaster="objects: .clickable"
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
-            <!--<a-entity id="bowser-model"
+            <a-entity id="bowser-model"
                       rotation="180 90 -90"
                       scale="2.5 2.5 2.5"
                       animation-mixer="loop: repeat"
-                      gltf-model="#rhino-asset"
+                      gltf-model="#hosaka-asset"
                       class="clickable"
-                      gesture-handler></a-entity>-->
-            <a-image src="assets/mikawa.jpg" width="2" height="2" rotation="90 0 0" position="0 0 0"></a-image>
+                      gesture-handler></a-entity>
+            
         </a-marker>
 
         <a-marker id="goat-marker"
@@ -77,10 +77,10 @@
                       gesture-handler></a-entity>
         </a-marker>
 
-        <a-marker id="cat-marker"
+        <a-marker id="rhino-marker22"
                   type="pattern"
                   preset="custom"
-                  url="assets/3.patt"
+                  url="assets/marker/pattern-3.patt"
                   raycaster="objects: .clickable"
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
@@ -88,7 +88,7 @@
                       rotation="180 90 180"
                       scale="3.0 3.0 3.0"
                       animation-mixer="loop: repeat"
-                      gltf-model="#cat-asset"
+                      gltf-model="#rhino-asset"
                       class="clickable"
                       gesture-handler></a-entity>
         </a-marker>
@@ -100,7 +100,7 @@
                   raycaster="objects: .clickable"
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="cat-model"
+            <a-entity id="hosaka-model"
                       rotation="180 90 180"
                       scale="3.0 3.0 3.0"
                       animation-mixer="loop: repeat"
@@ -126,7 +126,7 @@
                       gesture-handler></a-entity>
         </a-marker>
 
-        <a-marker id="cat-marker"
+        <!--<a-marker id="cat-marker"
                   type="pattern"
                   preset="custom"
                   url="assets/3.patt"
@@ -140,7 +140,7 @@
                       gltf-model="#cat-asset"
                       class="clickable"
                       gesture-handler></a-entity>
-        </a-marker>
+        </a-marker>-->
 
         <!--<a-camera gps-camera rotation-reader></a-camera>-->
         <!--<a-entity camera gps-camera arjs-look-controls='smoothingFactor: 0.5' rotation-reader></a-entity>-->
