@@ -30,8 +30,10 @@
             <a-asset-item id="cat-asset" src="assets/cat.glb"></a-asset-item>
             <a-asset-item id="rhino-asset" src="assets/rhino.glb"></a-asset-item>
             <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
+            <a-asset-item id="kaba-asset" src="assets/glb/kaba.glb"></a-asset-item>
             <a-asset-item id="hosaka-asset" src="assets/glb/1.glb"></a-asset-item>
             <a-asset-item id="taniguchi-asset" src="assets/glb/2.glb"></a-asset-item>
+
         </a-assets>
 
 
@@ -61,7 +63,7 @@
             
         </a-marker>
 
-        <a-marker id="goat-marker"
+        <!--<a-marker id="goat-marker"
                   type="pattern"
                   preset="custom"
                   url="assets/2.patt"
@@ -69,31 +71,31 @@
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="goat-model"
-                      rotation="180 90 180"
+                      rotation="180 90 -90"
                       scale="2.0 2.0 2.0"
                       animation-mixer="loop: repeat"
                       gltf-model="#goat-asset"
                       class="clickable"
                       gesture-handler></a-entity>
-        </a-marker>
+        </a-marker>-->
 
-        <a-marker id="rhino-marker22"
+        <a-marker id="kaba-marker"
                   type="pattern"
                   preset="custom"
                   url="assets/marker/pattern-3.patt"
                   raycaster="objects: .clickable"
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="cat-model"
-                      rotation="180 90 180"
+            <a-entity id="kaba-model"
+                      rotation="180 90 -90"
                       scale="3.0 3.0 3.0"
                       animation-mixer="loop: repeat"
-                      gltf-model="#rhino-asset"
+                      gltf-model="#kaba-asset"
                       class="clickable"
                       gesture-handler></a-entity>
         </a-marker>
 
-        <a-marker id="hosaka-marker"
+        <!--<a-marker id="hosaka-marker"
                   type="pattern"
                   preset="custom"
                   url="assets/marker/pattern-4.patt"
@@ -107,7 +109,7 @@
                       gltf-model="#hosaka-asset"
                       class="clickable"
                       gesture-handler></a-entity>
-        </a-marker>
+        </a-marker>-->
 
 
         <a-marker id="taniguchi-marker"
@@ -117,9 +119,9 @@
                   raycaster="objects: .clickable"
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="cat-model"
-                      rotation="180 90 180"
-                      scale="3.0 3.0 3.0"
+            <a-entity id="taniguchi-model"
+                      rotation="180 90 -90"
+                      scale="2.0 2.0 2.0"
                       animation-mixer="loop: repeat"
                       gltf-model="#taniguchi-asset"
                       class="clickable"
