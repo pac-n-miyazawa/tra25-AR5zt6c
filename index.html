@@ -30,16 +30,18 @@
             <a-asset-item id="cat-asset" src="assets/cat.glb"></a-asset-item>
             <a-asset-item id="rhino-asset" src="assets/rhino.glb"></a-asset-item>
             <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
+            <a-asset-item id="hosaka-asset" src="assets/glb/1.glb"></a-asset-item>
+            <a-asset-item id="taniguchi-asset" src="assets/glb/2.glb"></a-asset-item>
         </a-assets>
 
 
         <!--<a-entity id="cat-model2"
-              look-at="[gps-camera]"
-              animation-mixer="loop: repeat"
-              gltf-model="#cat-asset"
-              scale="3.0 3.0 3.0"
-              gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
-              visible="true"></a-entity>-->
+    look-at="[gps-camera]"
+    animation-mixer="loop: repeat"
+    gltf-model="#cat-asset"
+    scale="3.0 3.0 3.0"
+    gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
+    visible="true"></a-entity>-->
 
 
         <a-marker id="animated-marker"
@@ -50,7 +52,7 @@
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="bowser-model"
-                      rotation="-90 0 90"
+                      rotation="180 90 -90"
                       scale="2.5 2.5 2.5"
                       animation-mixer="loop: repeat"
                       gltf-model="#rhino-asset"
@@ -66,7 +68,7 @@
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="goat-model"
-                      rotation="-90 0 0"
+                      rotation="180 90 180"
                       scale="2.0 2.0 2.0"
                       animation-mixer="loop: repeat"
                       gltf-model="#goat-asset"
@@ -82,7 +84,56 @@
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="cat-model"
-                      rotation="-90 0 -90"
+                      rotation="180 90 180"
+                      scale="3.0 3.0 3.0"
+                      animation-mixer="loop: repeat"
+                      gltf-model="#cat-asset"
+                      class="clickable"
+                      gesture-handler></a-entity>
+        </a-marker>
+
+        <a-marker id="hosaka-marker"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/marker/pattern-4.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="cat-model"
+                      rotation="180 90 180"
+                      scale="3.0 3.0 3.0"
+                      animation-mixer="loop: repeat"
+                      gltf-model="#hosaka-asset"
+                      class="clickable"
+                      gesture-handler></a-entity>
+        </a-marker>
+
+
+        <a-marker id="taniguchi-marker"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/marker/pattern-5.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="cat-model"
+                      rotation="180 90 180"
+                      scale="3.0 3.0 3.0"
+                      animation-mixer="loop: repeat"
+                      gltf-model="#taniguchi-asset"
+                      class="clickable"
+                      gesture-handler></a-entity>
+        </a-marker>
+
+        <a-marker id="cat-marker"
+                  type="pattern"
+                  preset="custom"
+                  url="assets/3.patt"
+                  raycaster="objects: .clickable"
+                  emitevents="true"
+                  cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="cat-model"
+                      rotation="180 90 180"
                       scale="3.0 3.0 3.0"
                       animation-mixer="loop: repeat"
                       gltf-model="#cat-asset"
