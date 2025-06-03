@@ -53,7 +53,8 @@
                   raycaster="objects: .clickable"
                   emitevents="true"
                   cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="bowser-model"
+            <a-entity light="type: ambient; color: #ffffff; intensity: 1"
+                      id="bowser-model"
                       rotation="180 90 -90"
                       scale="2.5 2.5 2.5"
                       animation-mixer="loop: repeat"
@@ -148,10 +149,10 @@
         <!--<a-entity camera gps-camera arjs-look-controls='smoothingFactor: 0.5' rotation-reader></a-entity>-->
         <a-entity camera></a-entity>
     </a-scene>
-</body>
+<!--</body>-->
 
-<!--<body style="margin: 0; overflow: hidden;">
-    <h4 class="text_cat2">AR.js + A-Frame</h4>
+<!--<body style="margin: 0; overflow: hidden;">-->
+    <!--<h4 class="text_cat2">AR.js + A-Frame</h4>
     <a-scene vr-mode-ui="enabled: false;"
              renderer="logarithmicDepthBuffer: true;"
              embedded
@@ -162,10 +163,10 @@
             <a-asset-item id="cat-asset" src="assets/cat.glb"></a-asset-item>
             <a-asset-item id="rhino-asset" src="assets/newRhino.glb"></a-asset-item>
             <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
-        </a-assets>-->
+        </a-assets>
 
-         <!--gpsモデル--> 
-        <!--<a-entity id="rhino-model"
+         gpsモデル
+        <a-entity id="rhino-model"
                   look-at="[gps-camera]"
                   animation-mixer="loop: repeat"
                   gltf-model="#rhino-asset"
@@ -204,9 +205,9 @@
                   gltf-model="#cat-asset"
                   scale="3.0 3.0 3.0"
                   gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
-                  visible="false"></a-entity>-->
-         <!--markerモデル--> 
-        <!--<a-marker id="cat-marker"
+                  visible="false"></a-entity>
+         markerモデル
+        <a-marker id="cat-marker"
                   type="pattern"
                   preset="custom"
                   url="assets/1.patt"
@@ -265,11 +266,14 @@
                       class="clickable"
                       gesture-handler></a-entity>
         </a-marker>
-         カメラ 
+         カメラ
         <a-camera gps-camera rotation-reader></a-camera>
-    </a-scene>
+    </a-scene>-->
 
     <script>
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); // 白色光、強度1.0
+        scene.add(ambientLight);
+
         // 距離計算用の関数
         function calculateDistance(lat1, lon1, lat2, lon2) {
             const R = 6371e3; // 地球の半径 (メートル)
@@ -364,5 +368,5 @@
 
 
     </script>
-</body>-->
+</body>
 </html>
