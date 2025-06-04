@@ -247,7 +247,7 @@
                     for (let i = 0; i < gpsList.length; i++) {
                         distance = calculateDistance(gpsData.latitude, gpsData.longitude, gpsList[i].latitude, gpsList[i].longitude);
                         const model = document.querySelector(gpsList[i].modelId);
-                        if (!model) {
+                        if (model) {
                             if (distance <= 15) { // 10メートル以内なら表示
                                 model.setAttribute('visible', 'true');
                             } else {
