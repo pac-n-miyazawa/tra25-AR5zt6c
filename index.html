@@ -10,7 +10,9 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <h3 class="dis"></h3>
+    <h3 style="margin: 0px" class="gps"></h3>
+    <h3 style="margin: 0px"class="dis"></h3>
+
 
     <a-scene vr-mode-ui="enabled: false;"
              loading-screen="enabled: false;"
@@ -192,6 +194,7 @@
                             model.setAttribute('visible', 'false');
                         }
                     }
+                    document.querySelector(`.gps`).innerHTML = `AR.js + A-Frame + GPS!!!!${gpsData.latitude}, ${gpsData.longitude}`;
                     document.querySelector(`.dis`).innerHTML = `AR.js + A-Frame + GPS!!!!dsafgasdfja ${distance.toFixed(2)} m`;
 
                 }
