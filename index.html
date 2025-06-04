@@ -210,8 +210,8 @@
                     console.log('Current GPS coordinates:', gpsData);
 
                     const gpsList = [
-                        { latitude: 35.66212208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test1" },
-                        { latitude: 35.66212208359021, longitude: 139.76522158497855, modelId: "#giraffe-gps-model-test2" },
+                        { latitude: 35.66212208359021, longitude: 139.75622158497855, modelId: "#giraffe-gps-model-test1" },
+                        { latitude: 35.66212208359021, longitude: 139.75422158497855, modelId: "#giraffe-gps-model-test2" },
                         { latitude: 35.66212208359021, longitude: 139.75522158497855, modelId: "#giraffe-gps-model-test3" },
                         { latitude: 35.66212208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test4" },
                         { latitude: 35.66712208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test5" },
@@ -246,7 +246,7 @@
                         }
                     }
                     document.querySelector(`.gps`).innerHTML = `gps ${gpsData.latitude}, ${gpsData.longitude}`;
-                    document.querySelector(`.dis`).innerHTML = `distance ${distance.toFixed(2)} m`;
+
                 }
             }
         }, 2000); // 2秒ごとに確認
