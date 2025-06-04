@@ -140,9 +140,7 @@
     </a-scene>
 
     <script>
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1.0); // 白色光、強度1.0
-        scene.add(ambientLight);
-
+        console.log("init");
         // 距離計算用の関数
         function calculateDistance(lat1, lon1, lat2, lon2) {
             const R = 6371e3; // 地球の半径 (メートル)
