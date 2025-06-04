@@ -210,12 +210,12 @@
                     console.log('Current GPS coordinates:', gpsData);
 
                     const gpsList = [
-                        { latitude: 35.66212208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test" },
-                        { latitude: 35.66212208359021, longitude: 139.76522158497855, modelId: "#giraffe-gps-model-test" },
-                        { latitude: 35.66212208359021, longitude: 139.75522158497855, modelId: "#giraffe-gps-model-test" },
-                        { latitude: 35.66212208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test" },
-                        { latitude: 35.66712208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test" },
-                        { latitude: 35.65712208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test" },
+                        { latitude: 35.66212208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test1" },
+                        { latitude: 35.66212208359021, longitude: 139.76522158497855, modelId: "#giraffe-gps-model-test2" },
+                        { latitude: 35.66212208359021, longitude: 139.75522158497855, modelId: "#giraffe-gps-model-test3" },
+                        { latitude: 35.66212208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test4" },
+                        { latitude: 35.66712208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test5" },
+                        { latitude: 35.65712208359021, longitude: 139.76022158497855, modelId: "#giraffe-gps-model-test6" },
                         //{ latitude: 35.66213297964932, longitude: 139.76022627884421, modelId: "#crocodile-gps-model-test" },
                         //{ latitude: 35.66213570366395, longitude: 139.7602195733198, modelId: "#dear-gps-model-test" },
                         //{ latitude: 35.66213119827879, longitude: 139.76021444203626, modelId: "#bear-gps-model-test" },
@@ -242,7 +242,7 @@
                             model.setAttribute('visible', 'false');
                         }
                         if (i < 7) { // 最初の7つのモデルに対して表示
-                            document.querySelector(`.h${i}`).innerHTML = `distance ${distance.toFixed(2)} m`; // 各モデルのGPS情報を表示)
+                            document.querySelector(`.h${i}`).innerHTML = `distance ${distance.toFixed(2)} m ${modelId}`; // 各モデルのGPS情報を表示)
                         }
                     }
                     document.querySelector(`.gps`).innerHTML = `gps ${gpsData.latitude}, ${gpsData.longitude}`;
