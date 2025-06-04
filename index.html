@@ -69,6 +69,7 @@
     <a-scene vr-mode-ui="enabled: false;"
              loading-screen="enabled: false;"
              renderer="logarithmicDepthBuffer: true;"
+
              arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
              id="scene"
              embedded
@@ -79,9 +80,9 @@
             <a-asset-item id="rhino-asset" src="assets/rhino.glb"></a-asset-item>
             <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
             <!--<a-asset-item id="crocodile-asset" src="assets/glb/crocodile.glb"></a-asset-item>
-            <a-asset-item id="dear-asset" src="assets/glb/dear.glb"></a-asset-item>
+            <a-asset-item id="dear-asset" src="assets/glb/dear.glb"></a-asset-item>-->
             <a-asset-item id="bird-asset" src="assets/glb/bird.glb"></a-asset-item>
-            <a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>
+            <!--<a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>
             <a-asset-item id="rhino-cow-asset" src="assets/glb/rhino-cow.glb"></a-asset-item>
             <a-asset-item id="hippo-asset" src="assets/glb/hippo.glb"></a-asset-item>-->
             <!--<a-asset-item id="hosaka-asset" src="assets/glb/1.glb"></a-asset-item>
@@ -132,9 +133,9 @@
             <a-entity id="goat-model" rotation="180 90 -90" scale="2.0 2.0 2.0" animation-mixer="loop: repeat" gltf-model="#goat-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--11 - 鳥-->
-        <!--<a-marker id="bird-marker" type="pattern" preset="custom" url="assets/marker/pattern-11.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-marker id="bird-marker" type="pattern" preset="custom" url="assets/marker/pattern-11.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="bird-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#bird-asset" class="clickable" gesture-handler></a-entity>
-        </a-marker>-->
+        </a-marker>
         <!--12 - 奥田さん-->
         <!--<a-marker id="okuda-marker" type="pattern" preset="custom" url="assets/marker/pattern-12.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="okuda-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#okuda-asset" class="clickable" gesture-handler></a-entity>
