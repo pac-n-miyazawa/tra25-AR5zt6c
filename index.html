@@ -65,19 +65,19 @@
         </a-marker>
         <!--7 - 馬-->
         <a-marker id="horse-marker" type="pattern" preset="custom" url="assets/marker/pattern-7.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="horse-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#horse-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="horse-model" rotation="180 90 -90" scale="0.5 0.5 0.5" animation-mixer="loop: repeat" gltf-model="#horse-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--8 - サイと牛-->
         <a-marker id="rhino-cow-marker" type="pattern" preset="custom" url="assets/marker/pattern-8.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="rhino-cow-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#rhino-cow-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="rhino-cow-model" rotation="180 90 -90" scale="1.0 1.0 1.0" animation-mixer="loop: repeat" gltf-model="#rhino-cow-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--9 - カバ-->
         <a-marker id="hippo-marker" type="pattern" preset="custom" url="assets/marker/pattern-9.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="hippo-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#hippo-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="hippo-model" rotation="180 90 -90" scale="1.5 1.5 1.5" animation-mixer="loop: repeat" gltf-model="#hippo-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--10 - ヤギ-->
         <a-marker id="goat-marker" type="pattern" preset="custom" url="assets/marker/pattern-10.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="goat-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#goat-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="goat-model" rotation="180 90 -90" scale="2.0 2.0 2.0" animation-mixer="loop: repeat" gltf-model="#goat-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--11 - 鳥-->
         <a-marker id="bird-marker" type="pattern" preset="custom" url="assets/marker/pattern-11.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
@@ -208,57 +208,3 @@
     </script>
 </body>
 </html>
-
-   //        const distance = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude, modelLongitude);
-   //        const distance_jitaku = calculateDistance(gpsData.latitude, gpsData.longitude, modelLatitude_jitaku, modelLongitude_jitaku);
-
-   //        const distance_rhino = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9658314, 138.4665064);
-   //        const distance_giraffe = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9657242, 138.4668413);
-   //        const distance_goat = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9657294, 138.4668933);
-   //        const distance_cat = calculateDistance(gpsData.latitude, gpsData.longitude, 35.9647161, 138.4672074);
-   //        const distance_cat2 = calculateDistance(gpsData.latitude, gpsData.longitude, 35.614904, 139.721611);
-
-   //        document.querySelector('.text_goat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja goat:" + distance_goat;
-   //        document.querySelector('.text_cat').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja cat:" + distance_cat;
-   //        document.querySelector('.text_rhino').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja go-cart:" + distance_rhino;
-   //        document.querySelector('.text_giraffe').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja  animal:" + distance_giraffe;
-   //        document.querySelector('.text_cat2').innerHTML = "AR.js + A-Frame + GPS!!!!!!dsafgasdfja miyazawa_test:" + distance_cat2;
-
-   //        const model = document.querySelector('#goat-model');
-   //        const model_cat = document.querySelector('#cat-model');
-   //        const model_rhino = document.querySelector('#rhino-model');
-   //        const model_giraffe = document.querySelector('#giraffe-model');
-   //        const model_cat2 = document.querySelector('#cat-model2');
-   //        // 一定の距離 (例: 50メートル) に近づいたら表示
-   //        if (distance <= 10 || distance_goat <= 10) {
-   //            model.setAttribute('visible', 'true');
-   //        } else {
-   //            model.setAttribute('visible', 'false');
-   //        }
-   //        if (distance_cat <= 10) {
-   //            model_cat.setAttribute('visible', 'true');
-   //        } else {
-   //            model_cat.setAttribute('visible', 'false');
-   //        }
-   //        if (distance_rhino <= 10) {
-   //            model_rhino.setAttribute('visible', 'true');
-   //        } else {
-   //            model_rhino.setAttribute('visible', 'false');
-   //        }
-   //        if (distance_giraffe <= 10) {
-   //            model_giraffe.setAttribute('visible', 'true');
-   //        } else {
-   //            model_giraffe.setAttribute('visible', 'false');
-   //        }
-   //        if (distance_cat2 <= 15) {
-   //            model_cat2.setAttribute('visible', 'true');
-   //        } else {
-   //            model_cat2.setAttribute('visible', 'false');
-   //        }
-
-   //    } else {
-   //        console.log('GPS coordinates not available yet.');
-   //    }
-   //} else {
-   //    console.log('gps-camera component not initialized yet.');
-   //}
