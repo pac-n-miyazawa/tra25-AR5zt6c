@@ -12,34 +12,42 @@
             border-radius: 4px;
             margin: 0;
         }
-        .gps { 
+
+        .gps {
             top: 10px;
         }
+
         .h0 {
             top: 50px;
         }
-        .h1 { 
-            top: 90px; 
+
+        .h1 {
+            top: 90px;
         }
+
         .h2 {
             top: 130px;
         }
+
         .h3 {
             top: 170px;
         }
+
         .h4 {
             top: 210px;
         }
+
         .h5 {
             top: 250px;
         }
+
         .h6 {
             top: 290px;
         }
     </style>
 
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <!--<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>-->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
@@ -180,9 +188,9 @@
         <!--馬　35.965736　138.4665-->
         <a-entity id="horse-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.6621814670944; longitude: 139.76025712424521;" visible="false"></a-entity>
 
-        <a-entity camera></a-entity>
+        <!--<a-entity camera></a-entity>-->
         <!--<a-camera gps-camera rotation-reader></a-camera>-->
-        <!--<a-entity camera gps-camera rotation-reader></a-entity>-->
+        <a-entity camera gps-camera rotation-reader></a-entity>
     </a-scene>
 
     <script>
