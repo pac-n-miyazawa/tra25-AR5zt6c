@@ -130,19 +130,19 @@
         </a-marker>
         <!--12 - 奥田さん-->
         <a-marker id="okuda-marker" type="pattern" preset="custom" url="assets/marker/pattern-12.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity  id="okuda-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#okuda-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="okuda-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#okuda-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--13 - 三川さん-->
         <a-marker id="mikawa-marker" type="pattern" preset="custom" url="assets/marker/pattern-13.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity  id="mikawa-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#mikawa-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="mikawa-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#mikawa-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--14 - 大貴さん-->
         <a-marker id="daiki-marker" type="pattern" preset="custom" url="assets/marker/pattern-14.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity  id="kobayashi-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#kobayashi-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="kobayashi-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#kobayashi-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--15 - 谷口さん-->
         <a-marker id="taniguchi-marker" type="pattern" preset="custom" url="assets/marker/pattern-15.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity  id="taniguchi-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#taniguchi-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="taniguchi-model" rotation="180 90 -90" scale="2.5 2.5 2.5" animation-mixer="loop: repeat" gltf-model="#taniguchi-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--16 - 甫坂さん-->
         <a-marker id="hosaka-marker" type="pattern" preset="custom" url="assets/marker/pattern-16.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
@@ -180,7 +180,9 @@
         <!--馬　35.965736　138.4665-->
         <a-entity id="horse-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.6621814670944; longitude: 139.76025712424521;" visible="false"></a-entity>
 
-        <a-entity camera gps-camera rotation-reader></a-entity>
+        <!--<a-entity camera gps-camera rotation-reader></a-entity>-->
+    <a-camera gps-camera rotation-reader></a-camera>
+        <a-entity camera gps-camera arjs-look-controls='smoothingFactor: 0.5' rotation-reader></a-entity>
     </a-scene>
 
     <script>
