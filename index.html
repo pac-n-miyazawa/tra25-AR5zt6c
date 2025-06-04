@@ -182,8 +182,9 @@
                         { latitude: 35.6621814670944, longitude: 139.76025712424521, modelId: "#horse-gps-model-test" }
                     ];
                     // 距離を計算
+                    let distance = 0;
                     for (let i = 0; i < gpsList.length; i++) {
-                        const distance = calculateDistance(gpsData.latitude, gpsData.longitude, gpsList[i].latitude, gpsList[i].longitude);
+                        distance = calculateDistance(gpsData.latitude, gpsData.longitude, gpsList[i].latitude, gpsList[i].longitude);
                         const model = document.querySelector(gpsList[i].modelId);
                         if (distance <= 10) { // 10メートル以内なら表示
                             model.setAttribute('visible', 'true');
