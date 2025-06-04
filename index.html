@@ -12,7 +12,9 @@
             border-radius: 4px;
             margin: 0;
         }
-        .gps { top: 10px; }
+        .gps { 
+            top: 10px;
+        }
         .h0 {
             top: 30px;
         }
@@ -34,8 +36,8 @@
         .h6 {
             top: 150px;
         }
-        
     </style>
+
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -49,14 +51,12 @@
     <h3 class="gps"></h3>
 
     <h3 class="dis h0"></h3>
-    <h3 class="dis h1"></h3>
+    <!--<h3 class="dis h1"></h3>
     <h3 class="dis h2"></h3>
     <h3 class="dis h3"></h3>
     <h3 class="dis h4"></h3>
     <h3 class="dis h5"></h3>
-    <h3 class="dis h6"></h3>
-
-
+    <h3 class="dis h6"></h3>-->
 
     <a-scene vr-mode-ui="enabled: false;"
              loading-screen="enabled: false;"
@@ -237,9 +237,9 @@
                         } else {
                             model.setAttribute('visible', 'false');
                         }
-                        if (i < 7) { // 最初の7つのモデルに対して表示
-                            document.querySelector(`.h${i}`).innerHTML = `distance ${distance.toFixed(2)} m`; // 各モデルのGPS情報を表示)
-                        }
+                        //if (i < 7) { // 最初の7つのモデルに対して表示
+                        //    document.querySelector(`.h${i}`).innerHTML = `distance ${distance.toFixed(2)} m`; // 各モデルのGPS情報を表示)
+                        //}
                     }
                     document.querySelector(`.gps`).innerHTML = `gps ${gpsData.latitude}, ${gpsData.longitude}`;
                     document.querySelector(`.dis`).innerHTML = `distance ${distance.toFixed(2)} m`;
