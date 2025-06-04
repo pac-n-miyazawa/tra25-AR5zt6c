@@ -61,11 +61,7 @@
 
     <h3 class="dis h0"></h3>
     <h3 class="dis h1"></h3>
-    <h3 class="dis h2"></h3>
-    <h3 class="dis h3"></h3>
-    <h3 class="dis h4"></h3>
-    <h3 class="dis h5"></h3>
-    <h3 class="dis h6"></h3>
+    
 
     <a-scene vr-mode-ui="enabled: false;"
              loading-screen="enabled: false;"
@@ -254,7 +250,7 @@
                                 model.setAttribute('visible', 'false');
                             }
                         }
-                        if (i < 7) { // 最初の7つのモデルに対して表示
+                        if (i < 2) { // 最初の7つのモデルに対して表示
                             document.querySelector(`.h${i}`).innerHTML = `distance ${distance.toFixed(2)} m ${gpsList[i].modelId}`; // 各モデルのGPS情報を表示)
                         }
                     }
