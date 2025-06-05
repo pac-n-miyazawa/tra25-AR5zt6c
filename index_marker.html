@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene vr-mode-ui="enabled: false;"
+             loading-screen="enabled: false;"
+             renderer="logarithmicDepthBuffer: true;"
+             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+             id="scene"
+             embedded
+             gesture-detector>
+        <a-assets>
+            <a-asset-item id="goat-asset" src="assets/glb/goat.glb"></a-asset-item>
+            <!--<a-asset-item id="cat-asset" src="assets/glb/cat.glb"></a-asset-item>
+            <a-asset-item id="rhino-asset" src="assets/glb/rhino.glb"></a-asset-item>
+            <a-asset-item id="giraffe-asset" src="assets/glb/giraffe.glb"></a-asset-item>
+            <a-asset-item id="crocodile-asset" src="assets/glb/crocodile.glb"></a-asset-item>
+            <a-asset-item id="dear-asset" src="assets/glb/dear.glb"></a-asset-item>-->
+            <!--<a-asset-item id="bear-asset" src="assets/glb/dear.glb"></a-asset-item>-->
+            <a-asset-item id="bird-asset" src="assets/glb/bird.glb"></a-asset-item>
+            <!--<a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>-->
+            <a-asset-item id="rhino_cow-asset" src="assets/glb/rhino_cow.glb"></a-asset-item>
+            <a-asset-item id="hippo-asset" src="assets/glb/hippo.glb"></a-asset-item>
+
+            <a-asset-item id="hosaka-asset" src="assets/glb/hosaka2.glb"></a-asset-item>
+            <a-asset-item id="taniguchi-asset" src="assets/glb/taniguchi.glb"></a-asset-item>
+            <a-asset-item id="daiki-asset" src="assets/glb/koba.glb"></a-asset-item>
+            <a-asset-item id="okuda-asset" src="assets/glb/okuda.glb"></a-asset-item>
+            <a-asset-item id="mikawa-asset" src="assets/glb/mikawa.glb"></a-asset-item>
+        </a-assets>
+        <!--<a-assets>
+        <a-asset-item id="goat-asset" src="assets/goat.glb"></a-asset-item>
+        <a-asset-item id="cat-asset" src="assets/cat.glb"></a-asset-item>
+        <a-asset-item id="rhino-asset" src="assets/rhino.glb"></a-asset-item>
+        <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
+    </a-assets>-->
+        <!--<a-entity id="cat-model2"
+      look-at="[gps-camera]"
+      animation-mixer="loop: repeat"
+      gltf-model="#cat-asset"
+      scale="3.0 3.0 3.0"
+      gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
+      visible="true"></a-entity>-->
+        <!--8 - サイと牛-->
+        <a-marker id="rhino_cow-marker" type="pattern" preset="custom" url="assets/marker/pattern-8.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="rhino_cow-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#rhino_cow-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>
+        <!--9 - カバ-->
+        <a-marker id="hippo-marker" type="pattern" preset="custom" url="assets/marker/pattern-9.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="hippo-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hippo-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>
+        <!--10 - ヤギ-->
+        <a-marker id="goat-marker" type="pattern" preset="custom" url="assets/marker/pattern-10.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="goat-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#goat-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>
+        <!--11 - 鳥-->
+        <a-marker id="bird-marker" type="pattern" preset="custom" url="assets/marker/pattern-11.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="bird-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#bird-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>
+        <!--12 - 奥田さん-->
+        <a-marker id="okuda-marker" type="pattern" preset="custom" url="assets/marker/pattern-12.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="okuda-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#okuda-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>
+        <!--13 - 三川さん-->
+        <a-marker id="mikawa-marker" type="pattern" preset="custom" url="assets/marker/pattern-13.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="mikawa-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#mikawa-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>
+        <!--14 - 大貴さん-->
+        <a-marker id="daiki-marker" type="pattern" preset="custom" url="assets/marker/pattern-14.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="kobayashi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#kobayashi-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>
+        <!--15 - 谷口さん-->
+        <a-marker id="taniguchi-marker" type="pattern" preset="custom" url="assets/marker/pattern-15.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="taniguchi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#taniguchi-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>
+        <!--16 - 甫坂さん-->
+        <a-marker id="hosaka-marker" type="pattern" preset="custom" url="assets/marker/pattern-16.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <a-entity id="mosaka-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hosaka-asset" class="clickable" gesture-handler></a-entity>
+    </a-marker>
+
+        <!--<a-camera gps-camera rotation-reader></a-camera>-->
+        <!--<a-entity camera gps-camera arjs-look-controls='smoothingFactor: 0.5' rotation-reader></a-entity>-->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
+
+<!--<!doctype html>
+<html>
+<head>
+    <style>
+        .gps, .dis {
+            position: fixed;
+            left: 10px;
+            z-index: 1000;
+            color: white;
+            background: rgba(0,0,0,0.5);
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin: 0;
+        }
+
+        .gps {
+            top: 10px;
+        }
+
+        .h0 {
+            top: 50px;
+        }
+
+        .h1 {
+            top: 90px;
+        }
+
+        .h2 {
+            top: 130px;
+        }
+
+        .h3 {
+            top: 170px;
+        }
+
+        .h4 {
+            top: 210px;
+        }
+
+        .h5 {
+            top: 250px;
+        }
+
+        .h6 {
+            top: 290px;
+        }
+    </style>
+
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+    <a-scene vr-mode-ui="enabled: false;"
+             loading-screen="enabled: false;"
+             renderer="logarithmicDepthBuffer: true;"
+             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+             id="scene"
+             embedded
+             gesture-detector>
+        <a-assets>
+            <a-asset-item id="goat-asset" src="assets/glb/goat.glb"></a-asset-item>
+            <a-asset-item id="cat-asset" src="assets/glb/cat.glb"></a-asset-item>
+            <a-asset-item id="rhino-asset" src="assets/glb/rhino.glb"></a-asset-item>
+            <a-asset-item id="giraffe-asset" src="assets/glb/giraffe.glb"></a-asset-item>
+            <a-asset-item id="crocodile-asset" src="assets/glb/crocodile.glb"></a-asset-item>
+            <a-asset-item id="dear-asset" src="assets/glb/dear.glb"></a-asset-item>
+            <a-asset-item id="bear-asset" src="assets/glb/dear.glb"></a-asset-item>
+            <a-asset-item id="bird-asset" src="assets/glb/bird.glb"></a-asset-item>
+            <a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>
+            <a-asset-item id="rhino_cow-asset" src="assets/glb/rhino_cow.glb"></a-asset-item>
+            <a-asset-item id="hippo-asset" src="assets/glb/hippo.glb"></a-asset-item>
+
+            <a-asset-item id="hosaka-asset" src="assets/glb/hosaka2.glb"></a-asset-item>
+            <a-asset-item id="taniguchi-asset" src="assets/glb/taniguchi.glb"></a-asset-item>
+            <a-asset-item id="daiki-asset" src="assets/glb/koba.glb"></a-asset-item>
+            <a-asset-item id="okuda-asset" src="assets/glb/okuda.glb"></a-asset-item>
+            <a-asset-item id="mikawa-asset" src="assets/glb/mikawa.glb"></a-asset-item>
+        </a-assets>-->
+<!--1 - 熊　被り-->
+<!--<a-marker id="bear-marker" type="pattern" preset="custom" url="assets/marker/pattern-1.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="bear-model" rotation="180 90 180" scale="0.5 0.5 0.5" animation-mixer="loop: repeat" gltf-model="#bear-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--2 - 猫　被り-->
+<!--<a-marker id="cat-marker" type="pattern" preset="custom" url="assets/marker/pattern-2.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="cat-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#cat-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--3 - サイ　被り-->
+<!--<a-marker id="rhino-marker" type="pattern" preset="custom" url="assets/marker/pattern-3.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="rhino-model" position="0 0 0" rotation="0 0 0" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#rhino-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--4 - 鹿　被り-->
+<!--<a-marker id="dear-marker" type="pattern" preset="custom" url="assets/marker/pattern-4.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="dear-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#dear-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--5 - キリン 被り-->
+<!--<a-marker id="giraffe-marker" type="pattern" preset="custom" url="assets/marker/pattern-5.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="giraffe-model" position="0 0 0" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--6 - ワニ　被り-->
+<!--<a-marker id="crocodile-marker" type="pattern" preset="custom" url="assets/marker/pattern-6.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="crocodile-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#crocodile-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--7 - 馬　被り-->
+<!--<a-marker id="horse-marker" type="pattern" preset="custom" url="assets/marker/pattern-7.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="horse-model" rotation="180 90 180" scale="0.5 0.5 0.5" animation-mixer="loop: repeat" gltf-model="#horse-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--8 - サイと牛-->
+<!--<a-marker id="rhino_cow-marker" type="pattern" preset="custom" url="assets/marker/pattern-8.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="rhino_cow-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#rhino_cow-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--9 - カバ-->
+<!--<a-marker id="hippo-marker" type="pattern" preset="custom" url="assets/marker/pattern-9.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="hippo-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hippo-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--10 - ヤギ-->
+<!--<a-marker id="goat-marker" type="pattern" preset="custom" url="assets/marker/pattern-10.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="goat-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#goat-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--11 - 鳥-->
+<!--<a-marker id="bird-marker" type="pattern" preset="custom" url="assets/marker/pattern-11.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="bird-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#bird-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--12 - 奥田さん-->
+<!--<a-marker id="okuda-marker" type="pattern" preset="custom" url="assets/marker/pattern-12.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="okuda-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#okuda-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--13 - 三川さん-->
+<!--<a-marker id="mikawa-marker" type="pattern" preset="custom" url="assets/marker/pattern-13.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="mikawa-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#mikawa-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--14 - 大貴さん-->
+<!--<a-marker id="daiki-marker" type="pattern" preset="custom" url="assets/marker/pattern-14.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="kobayashi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#kobayashi-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--15 - 谷口さん-->
+<!--<a-marker id="taniguchi-marker" type="pattern" preset="custom" url="assets/marker/pattern-15.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="taniguchi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#taniguchi-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--16 - 甫坂さん-->
+<!--<a-marker id="hosaka-marker" type="pattern" preset="custom" url="assets/marker/pattern-16.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+    <a-entity id="mosaka-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hosaka-asset" class="clickable" gesture-handler></a-entity>
+</a-marker>-->
+<!--GPS-->
+<!--キリン　35.964959　138.466466-->
+<!--<a-entity id="giraffe-gps-model" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" scale="1 1 1" gps-entity-place="latitude: 35.964959; longitude: 138.466466;" visible="false"></a-entity>-->
+<!--ワニ　35.965035　138.467613-->
+<!--<a-entity id="crocodile-gps-model" animation-mixer="loop: repeat" gltf-model="#crocodile-asset" scale="1 1 1" gps-entity-place="latitude: 35.965035; longitude: 138.467613;" visible="false"></a-entity>-->
+<!--鹿　35.965275 138.467118-->
+<!--<a-entity id="dear-gps-model" animation-mixer="loop: repeat" gltf-model="#dear-asset" scale="1 1 1" gps-entity-place="latitude: 35.965275; longitude: 138.467118;" visible="false"></a-entity>-->
+<!--熊 35.965744 138.466919-->
+<!--<a-entity id="bear-gps-model" animation-mixer="loop: repeat" gltf-model="#bear-asset" scale="1 1 1" gps-entity-place="latitude: 35.965744; longitude: 138.466919;" visible="false"></a-entity>-->
+<!--猫　35.965406　138.467218-->
+<!--<a-entity id="cat-gps-model" animation-mixer="loop: repeat" gltf-model="#cat-asset" scale="1 1 1" gps-entity-place="latitude: 35.965406; longitude: 138.467218;" visible="false"></a-entity>-->
+<!--サイ　35.964614 138.467246-->
+<!--<a-entity id="rhino-gps-model" animation-mixer="loop: repeat" gltf-model="#rhino-asset" scale="1 1 1" gps-entity-place="latitude: 35.964614; longitude: 138.467246;" visible="false"></a-entity>-->
+<!--馬　35.965736　138.4665-->
+<!--<a-entity id="horse-gps-model" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="1 1 1" gps-entity-place="latitude: 35.965736; longitude: 138.4665;" visible="false"></a-entity>-->
+<!--本社テスト-->
+<!--<a-entity id="giraffe-gps-model-test" visible="true" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" scale="1 1 1" gps-entity-place="latitude: 36.61490542310459; longitude: 139.72161954284306;"></a-entity>-->
+<!--ワニ　35.965035　138.467613-->
+<!--<a-entity id="crocodile-gps-model-test" visible="true" animation-mixer="loop: repeat" gltf-model="#crocodile-asset" scale="1 1 1" gps-entity-place="latitude: 35.61493471817809; longitude: 139.72163661231565;"></a-entity>-->
+<!--鹿　35.965275 138.467118-->
+<!--<a-entity id="dear-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#dear-asset" scale="1 1 1" gps-entity-place="latitude: 35.61495167847888; longitude: 139.72164230213986;"></a-entity>-->
+<!--熊 35.965744 138.466919-->
+<!--<a-entity id="bear-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#bear-asset" scale="3 3 " gps-entity-place="latitude: 35.614947333528505; longitude: 139.7216210548269;" ></a-entity>-->
+<!--猫　35.965406　138.467218-->
+<!--<a-entity id="cat-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#cat-asset" scale="1 1 1" gps-entity-place="latitude: 35.61488137341433; longitude: 139.72167939286942;" ></a-entity>-->
+<!--サイ　35.964614 138.467246-->
+<!--<a-entity id="rhino-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#rhino-asset" scale="1 1 1" gps-entity-place="latitude: 35.614973499509134; longitude: 139.72163848918444;" ></a-entity>-->
+<!--馬　35.965736　138.4665-->
+<!--<a-entity id="horse-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="1 1 1" gps-entity-place="latitude: 35.614869941759814; longitude:  139.7216221073331;" ></a-entity>-->
+<!--<a-entity camera></a-entity>
+        <a-camera class="camera" gps-camera rotation-reader></a-camera>
+
+    </a-scene>
+
+    <script>
+        console.log("init");
+        // 距離計算用の関数
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371e3; // 地球の半径 (メートル)
+            const phi1 = lat1 * Math.PI / 180;
+            const phi2 = lat2 * Math.PI / 180;
+            const dp = (lat2 - lat1) * Math.PI / 180;
+            const dr = (lon2 - lon1) * Math.PI / 180;
+
+            const a = Math.sin(dp / 2) * Math.sin(dp / 2) +
+                Math.cos(phi1) * Math.cos(phi2) *
+                Math.sin(dr / 2) * Math.sin(dr / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+            return R * c; // 距離 (メートル)
+        }
+
+        // gps-camera の位置情報取得状況を定期的に確認
+        setInterval(() => {
+            const camera = document.querySelector('.camera');
+            if (camera.components['gps-camera']) {
+                const gpsData = camera.components['gps-camera'].currentCoords;
+                if (gpsData) {
+                    console.log('Current GPS coordinates:', gpsData);
+
+                    const gpsList = [
+                        { latitude: 36.61490542310459, longitude: 139.72161954284306, modelId: "#giraffe-gps-model-test" },
+                        { latitude: 35.61493471817809, longitude: 139.72163661231565, modelId: "#crocodile-gps-model-test" },
+                        { latitude: 35.61495167847888, longitude: 139.72164230213986, modelId: "#dear-gps-model-test" },
+                        { latitude: 35.614947333528505, longitude: 139.7216210548269, modelId: "#bear-gps-model-test" },
+                        { latitude: 35.61488137341433, longitude: 139.72167939286942, modelId: "#cat-gps-model-test" },
+                        { latitude: 35.614973499509134, longitude: 139.72163848918444, modelId: "#rhino-gps-model-test" },
+                        { latitude: 35.61494351765561, longitude: 139.72164519470658, modelId: "#horse-gps-model-test" },
+
+                        //牧場
+                        //{ latitude: 35.964959, longitude: 138.466466, modelId: "#giraffe-gps-model" },// キリン
+                        //{ latitude: 35.965035, longitude: 138.467613, modelId: "#crocodile-gps-model" }, // ワニ
+                        //{ latitude: 35.965275, longitude: 138.467118, modelId: "#dear-gps-model" }, // 鹿
+                        //{ latitude: 35.965744, longitude: 138.466919, modelId: "#bear-gps-model" }, // 熊
+                        //{ latitude: 35.965406, longitude: 138.467218, modelId: "#cat-gps-model" }, // 猫
+                        //{ latitude: 35.964614, longitude: 138.467246, modelId: "#rhino-gps-model" }, // サイ
+                        //{ latitude: 35.965736, longitude: 138.4665, modelId: "#horse-gps-model" } // 馬
+                    ];
+                    // 距離を計算
+                    let distance = 0;
+                    for (let i = 0; i < gpsList.length; i++) {
+                        distance = calculateDistance(gpsData.latitude, gpsData.longitude, gpsList[i].latitude, gpsList[i].longitude);
+                        const model = document.querySelector(gpsList[i].modelId);
+                        if (model) {
+                        //    if (distance <= 11) { // 10メートル以内なら表示
+                        //        model.setAttribute('visible', true);
+                        //    } else {
+                        //        model.setAttribute('visible', false);
+                        //    }
+                        }
+                        if (i <= 7) { // 最初の7つのモデルに対して表示
+                            document.querySelector(`.h${i}`).innerHTML = `distance ${distance.toFixed(2)} m ${gpsList[i].modelId}`; // 各モデルのGPS情報を表示)
+                        }
+                    }
+
+                }
+            }
+        }, 2500); // 2.5秒ごとに確認
+
+        window.addEventListener('gps-camera-update-position', (event) => {
+            console.log('GPS position updated:', event.detail.position);
+        });
+    </script>
+</body>
+</html>-->

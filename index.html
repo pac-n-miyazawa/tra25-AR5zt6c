@@ -44,6 +44,28 @@
         .h6 {
             top: 290px;
         }
+
+        .ar-marker-btn {
+            position: fixed;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            z-index: 2000;
+            padding: 14px 32px;
+            font-size: 1.2em;
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            opacity: 0.95;
+        }
+
+            .ar-marker-btn:active {
+                background: #1565c0;
+            }
+
     </style>
 
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
@@ -178,13 +200,22 @@
         <!--<a-entity id="rhino-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#rhino-asset" scale="1 1 1" gps-entity-place="latitude: 35.614973499509134; longitude: 139.72163848918444;" ></a-entity>-->
         <!--馬　35.965736　138.4665-->
         <!--<a-entity id="horse-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="1 1 1" gps-entity-place="latitude: 35.614869941759814; longitude:  139.7216221073331;" ></a-entity>-->
-
-        <a-entity camera></a-entity>
+        <!--<a-entity camera></a-entity>-->
         <a-camera class="camera" gps-camera rotation-reader></a-camera>
 
     </a-scene>
 
+
+    <button id="ar-marker-btn" class="ar-marker-btn">ARマーカー</button>
+
+
+
     <script>
+        document.getElementById('ar-marker-btn').addEventListener('click', function () {
+            window.location.href = 'index_marker.html';
+        });
+
+
         console.log("init");
         // 距離計算用の関数
         function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -234,11 +265,11 @@
                         distance = calculateDistance(gpsData.latitude, gpsData.longitude, gpsList[i].latitude, gpsList[i].longitude);
                         const model = document.querySelector(gpsList[i].modelId);
                         if (model) {
-                        //    if (distance <= 11) { // 10メートル以内なら表示
-                        //        model.setAttribute('visible', true);
-                        //    } else {
-                        //        model.setAttribute('visible', false);
-                        //    }
+                            //    if (distance <= 11) { // 10メートル以内なら表示
+                            //        model.setAttribute('visible', true);
+                            //    } else {
+                            //        model.setAttribute('visible', false);
+                            //    }
                         }
                         if (i <= 7) { // 最初の7つのモデルに対して表示
                             document.querySelector(`.h${i}`).innerHTML = `distance ${distance.toFixed(2)} m ${gpsList[i].modelId}`; // 各モデルのGPS情報を表示)
