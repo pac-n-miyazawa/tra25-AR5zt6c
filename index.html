@@ -206,7 +206,7 @@
     </a-scene>
 
 
-    <button id="ar-marker-btn" class="ar-marker-btn">ARマーカー</button>
+    <button id="ar-marker-btn" class="ar-marker-btn">数字読み取りモード</button>
 
 
 
@@ -265,11 +265,11 @@
                         distance = calculateDistance(gpsData.latitude, gpsData.longitude, gpsList[i].latitude, gpsList[i].longitude);
                         const model = document.querySelector(gpsList[i].modelId);
                         if (model) {
-                            //    if (distance <= 11) { // 10メートル以内なら表示
-                            //        model.setAttribute('visible', true);
-                            //    } else {
-                            //        model.setAttribute('visible', false);
-                            //    }
+                                if (distance <= 11) { // 10メートル以内なら表示
+                                    model.setAttribute('visible', true);
+                                } else {
+                                    model.setAttribute('visible', false);
+                                }
                         }
                         if (i <= 7) { // 最初の7つのモデルに対して表示
                             document.querySelector(`.h${i}`).innerHTML = `distance ${distance.toFixed(2)} m ${gpsList[i].modelId}`; // 各モデルのGPS情報を表示)

@@ -8,6 +8,29 @@
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
     <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+
+    <style>
+        .ar-marker-btn {
+            position: fixed;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            z-index: 2000;
+            padding: 14px 32px;
+            font-size: 1.2em;
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            opacity: 0.95;
+        }
+
+            .ar-marker-btn:active {
+                background: #1565c0;
+            }
+    </style>
 </head>
 
 <body style="margin: 0; overflow: hidden;">
@@ -20,14 +43,8 @@
              gesture-detector>
         <a-assets>
             <a-asset-item id="goat-asset" src="assets/glb/goat.glb"></a-asset-item>
-            <!--<a-asset-item id="cat-asset" src="assets/glb/cat.glb"></a-asset-item>
-            <a-asset-item id="rhino-asset" src="assets/glb/rhino.glb"></a-asset-item>
-            <a-asset-item id="giraffe-asset" src="assets/glb/giraffe.glb"></a-asset-item>
-            <a-asset-item id="crocodile-asset" src="assets/glb/crocodile.glb"></a-asset-item>
-            <a-asset-item id="dear-asset" src="assets/glb/dear.glb"></a-asset-item>-->
-            <!--<a-asset-item id="bear-asset" src="assets/glb/dear.glb"></a-asset-item>-->
+            <a-asset-item id="bear-asset" src="assets/glb/dear.glb"></a-asset-item>
             <a-asset-item id="bird-asset" src="assets/glb/bird.glb"></a-asset-item>
-            <!--<a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>-->
             <a-asset-item id="rhino_cow-asset" src="assets/glb/rhino_cow.glb"></a-asset-item>
             <a-asset-item id="hippo-asset" src="assets/glb/hippo.glb"></a-asset-item>
 
@@ -36,62 +53,72 @@
             <a-asset-item id="daiki-asset" src="assets/glb/koba.glb"></a-asset-item>
             <a-asset-item id="okuda-asset" src="assets/glb/okuda.glb"></a-asset-item>
             <a-asset-item id="mikawa-asset" src="assets/glb/mikawa.glb"></a-asset-item>
+
+            <!--gpsからARマーカーに変更-->
+            <!--<a-asset-item id="cat-asset" src="assets/glb/cat.glb"></a-asset-item>
+            <a-asset-item id="rhino-asset" src="assets/glb/rhino.glb"></a-asset-item>
+            <a-asset-item id="giraffe-asset" src="assets/glb/giraffe.glb"></a-asset-item>
+            <a-asset-item id="crocodile-asset" src="assets/glb/crocodile.glb"></a-asset-item>
+            <a-asset-item id="dear-asset" src="assets/glb/dear.glb"></a-asset-item>
+            <a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>-->
         </a-assets>
-        <!--<a-assets>
-        <a-asset-item id="goat-asset" src="assets/goat.glb"></a-asset-item>
-        <a-asset-item id="cat-asset" src="assets/cat.glb"></a-asset-item>
-        <a-asset-item id="rhino-asset" src="assets/rhino.glb"></a-asset-item>
-        <a-asset-item id="giraffe-asset" src="assets/giraffe.glb"></a-asset-item>
-    </a-assets>-->
-        <!--<a-entity id="cat-model2"
-      look-at="[gps-camera]"
-      animation-mixer="loop: repeat"
-      gltf-model="#cat-asset"
-      scale="3.0 3.0 3.0"
-      gps-entity-place="latitude: 35.614904; longitude: 139.721611;"
-      visible="true"></a-entity>-->
+
+        <!--サイ　6テスト-->
+        <a-marker id="rhino-marker" type="pattern" preset="custom" url="assets/marker/pattern-6.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="rhino-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#rhino-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
         <!--8 - サイと牛-->
         <a-marker id="rhino_cow-marker" type="pattern" preset="custom" url="assets/marker/pattern-8.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-        <a-entity id="rhino_cow-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#rhino_cow-asset" class="clickable" gesture-handler></a-entity>
-    </a-marker>
+            <a-entity id="rhino_cow-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#rhino_cow-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
         <!--9 - カバ-->
         <a-marker id="hippo-marker" type="pattern" preset="custom" url="assets/marker/pattern-9.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-        <a-entity id="hippo-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hippo-asset" class="clickable" gesture-handler></a-entity>
-    </a-marker>
+            <a-entity id="hippo-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hippo-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
         <!--10 - ヤギ-->
         <a-marker id="goat-marker" type="pattern" preset="custom" url="assets/marker/pattern-10.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-        <a-entity id="goat-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#goat-asset" class="clickable" gesture-handler></a-entity>
-    </a-marker>
+            <a-entity id="goat-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#goat-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
         <!--11 - 鳥-->
         <a-marker id="bird-marker" type="pattern" preset="custom" url="assets/marker/pattern-11.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-        <a-entity id="bird-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#bird-asset" class="clickable" gesture-handler></a-entity>
-    </a-marker>
+            <a-entity id="bird-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#bird-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
         <!--12 - 奥田さん-->
         <a-marker id="okuda-marker" type="pattern" preset="custom" url="assets/marker/pattern-12.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-        <a-entity id="okuda-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#okuda-asset" class="clickable" gesture-handler></a-entity>
-    </a-marker>
+            <a-entity id="okuda-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#okuda-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
         <!--13 - 三川さん-->
         <a-marker id="mikawa-marker" type="pattern" preset="custom" url="assets/marker/pattern-13.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-        <a-entity id="mikawa-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#mikawa-asset" class="clickable" gesture-handler></a-entity>
-    </a-marker>
+            <a-entity id="mikawa-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#mikawa-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
         <!--14 - 大貴さん-->
         <a-marker id="daiki-marker" type="pattern" preset="custom" url="assets/marker/pattern-14.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-        <a-entity id="kobayashi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#kobayashi-asset" class="clickable" gesture-handler></a-entity>
-    </a-marker>
+            <a-entity id="kobayashi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#kobayashi-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
         <!--15 - 谷口さん-->
         <a-marker id="taniguchi-marker" type="pattern" preset="custom" url="assets/marker/pattern-15.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-        <a-entity id="taniguchi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#taniguchi-asset" class="clickable" gesture-handler></a-entity>
-    </a-marker>
+            <a-entity id="taniguchi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#taniguchi-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
         <!--16 - 甫坂さん-->
         <a-marker id="hosaka-marker" type="pattern" preset="custom" url="assets/marker/pattern-16.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-        <a-entity id="mosaka-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hosaka-asset" class="clickable" gesture-handler></a-entity>
-    </a-marker>
+            <a-entity id="mosaka-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hosaka-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
 
         <!--<a-camera gps-camera rotation-reader></a-camera>-->
         <!--<a-entity camera gps-camera arjs-look-controls='smoothingFactor: 0.5' rotation-reader></a-entity>-->
         <a-entity camera></a-entity>
     </a-scene>
+
+    <button id="ar-marker-btn" class="ar-marker-btn">かざすモード</button>
+
+    <script>
+        document.getElementById('ar-marker-btn').addEventListener('click', function () {
+            window.location.href = 'index.html';
+        });
+    </script>
 </body>
+
+
 
 </html>
 
