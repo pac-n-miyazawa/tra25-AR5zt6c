@@ -76,13 +76,13 @@
 
 <body style="margin: 0; overflow: hidden;">
     <!--デバッグモード-->
-    <!--<h3 class="dis h0"></h3>
+    <h3 class="dis h0"></h3>
     <h3 class="dis h1">GPS位置情報を取得中...</h3>
     <h3 class="dis h2">GPS位置情報を取得中...</h3>
     <h3 class="dis h3">GPS位置情報を取得中...</h3>
     <h3 class="dis h4">GPS位置情報を取得中...</h3>
     <h3 class="dis h5">GPS位置情報を取得中...</h3>
-    <h3 class="dis h6">GPS位置情報を取得中...</h3>-->
+    <h3 class="dis h6">GPS位置情報を取得中...</h3>
 
     <a-scene vr-mode-ui="enabled: false;"
              loading-screen="enabled: false;"
@@ -263,11 +263,17 @@
                         distance = calculateDistance(gpsData.latitude, gpsData.longitude, gpsList[i].latitude, gpsList[i].longitude);
                         const model = document.querySelector(gpsList[i].modelId);
                         if (model) {
-                            //if (distance <= 10) { // 10メートル以内なら表示
-                            //    model.setAttribute('visible', true);
-                            //} else {
-                            //    model.setAttribute('visible', false);
-                            //}
+                            if (distance <= 10) { // 10メートル以内なら表示
+                                model.setAttribute('visible', true);
+                            } else {
+                                model.setAttribute('visible', false);
+                            }
+                            // デバッグ用の表示
+                            const debugElement = document.querySelector('.dis.h' + i);
+                            if (debugElement) {
+                                debugElement.textContent = `Model ${i + 1}: 距離 ${distance.toFixed(2)} m`;
+                            }
+
                         }
                     }
 
