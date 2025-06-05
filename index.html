@@ -140,24 +140,24 @@
         </a-marker>
         <!--12 - 奥田さん-->
         <a-marker id="okuda-marker" type="pattern" preset="custom" url="assets/marker/pattern-12.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="okuda-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#okuda-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="okuda-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#okuda-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--13 - 三川さん-->
         <a-marker id="mikawa-marker" type="pattern" preset="custom" url="assets/marker/pattern-13.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="mikawa-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#mikawa-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="mikawa-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#mikawa-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--14 - 大貴さん-->
         <a-marker id="daiki-marker" type="pattern" preset="custom" url="assets/marker/pattern-14.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="kobayashi-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#kobayashi-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="kobayashi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#kobayashi-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--15 - 谷口さん-->
         <a-marker id="taniguchi-marker" type="pattern" preset="custom" url="assets/marker/pattern-15.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="taniguchi-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#taniguchi-asset" class="clickable" gesture-handler></a-entity>
+            <a-entity id="taniguchi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#taniguchi-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--16 - 甫坂さん-->
-        <!--<a-marker id="hosaka-marker" type="pattern" preset="custom" url="assets/marker/pattern-16.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="mosaka-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hosaka-asset" class="clickable" gesture-handler></a-entity>
-        </a-marker>-->
+        <a-marker id="hosaka-marker" type="pattern" preset="custom" url="assets/marker/pattern-16.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="mosaka-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hosaka-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
 
         <!--GPS-->
         <!--キリン　35.964959　138.466466-->
@@ -179,9 +179,9 @@
         <!--ワニ　35.965035　138.467613-->
         <a-entity id="crocodile-gps-model-test" visible="true" animation-mixer="loop: repeat" gltf-model="#crocodile-asset" scale="1 1 1" gps-entity-place="latitude: 35.61493471817809; longitude: 139.72163661231565;"></a-entity>
         <!--鹿　35.965275 138.467118-->
-        <a-entity id="dear-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#dear-asset" scale="2 2 2" gps-entity-place="latitude: 35.61495167847888; longitude: 139.72164230213986;"></a-entity>
+        <a-entity id="dear-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#dear-asset" scale="1 1 1" gps-entity-place="latitude: 35.61495167847888; longitude: 139.72164230213986;"></a-entity>
         <!--熊 35.965744 138.466919-->
-        <a-entity id="bear-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#bear-asset" scale="3 3 3" gps-entity-place="latitude: 35.614947333528505; longitude: 139.7216210548269;" ></a-entity>
+        <a-entity id="bear-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#bear-asset" scale="1 1 1" gps-entity-place="latitude: 35.614947333528505; longitude: 139.7216210548269;" ></a-entity>
         <!--猫　35.965406　138.467218-->
         <a-entity id="cat-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#cat-asset" scale="1 1 1" gps-entity-place="latitude: 35.61488137341433; longitude: 139.72167939286942;" ></a-entity>
         <!--サイ　35.964614 138.467246-->
@@ -189,7 +189,7 @@
         <!--馬　35.965736　138.4665-->
         <a-entity id="horse-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="1 1 1" gps-entity-place="latitude: 35.614869941759814; longitude:  139.7216221073331;" ></a-entity>
 
-        <!--<a-entity camera></a-entity>-->
+        <a-entity camera></a-entity>
         <a-camera class="camera" gps-camera rotation-reader></a-camera>
 
     </a-scene>
@@ -219,8 +219,6 @@
                 const gpsData = camera.components['gps-camera'].currentCoords;
                 if (gpsData) {
                     console.log('Current GPS coordinates:', gpsData);
-
-
 
                     const gpsList = [
                         { latitude: 36.61490542310459, longitude: 139.72161954284306, modelId: "#giraffe-gps-model-test" },
