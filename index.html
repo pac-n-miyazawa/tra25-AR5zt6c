@@ -63,9 +63,9 @@
             opacity: 0.95;
         }
 
-            .ar-marker-btn:active {
-                background: #1565c0;
-            }
+        .ar-marker-btn:active {
+            background: #1565c0;
+        }
 
     </style>
 
@@ -79,6 +79,14 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
+    <!--デバッグモード-->
+    <!--<h3 class="dis h0"></h3>
+    <h3 class="dis h1">GPS位置情報を取得中...</h3>
+    <h3 class="dis h2">GPS位置情報を取得中...</h3>
+    <h3 class="dis h3">GPS位置情報を取得中...</h3>
+    <h3 class="dis h4">GPS位置情報を取得中...</h3>
+    <h3 class="dis h5">GPS位置情報を取得中...</h3>
+    <h3 class="dis h6">GPS位置情報を取得中...</h3>-->
 
     <a-scene vr-mode-ui="enabled: false;"
              loading-screen="enabled: false;"
@@ -99,7 +107,6 @@
             <a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>
             <!--<a-asset-item id="rhino_cow-asset" src="assets/glb/rhino_cow.glb"></a-asset-item>-->
             <!--<a-asset-item id="hippo-asset" src="assets/glb/hippo.glb"></a-asset-item>-->
-
             <!--<a-asset-item id="hosaka-asset" src="assets/glb/hosaka2.glb"></a-asset-item>
             <a-asset-item id="taniguchi-asset" src="assets/glb/taniguchi.glb"></a-asset-item>
             <a-asset-item id="daiki-asset" src="assets/glb/koba.glb"></a-asset-item>
@@ -171,7 +178,6 @@
         <!--<a-marker id="hosaka-marker" type="pattern" preset="custom" url="assets/marker/pattern-16.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="mosaka-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hosaka-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>-->
-
         <!--GPS-->
         <!--キリン　35.964959　138.466466-->
         <a-entity id="giraffe-gps-model" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" scale="1 1 1" gps-entity-place="latitude: 35.964959; longitude: 138.466466;" visible="false"></a-entity>
@@ -187,7 +193,6 @@
         <a-entity id="rhino-gps-model" animation-mixer="loop: repeat" gltf-model="#rhino-asset" scale="1 1 1" gps-entity-place="latitude: 35.964614; longitude: 138.467246;" visible="false"></a-entity>
         <!--馬　35.965736　138.4665-->
         <a-entity id="horse-gps-model" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="1 1 1" gps-entity-place="latitude: 35.965736; longitude: 138.4665;" visible="false"></a-entity>
-
 
         <!--本社テスト-->
         <!--<a-entity id="giraffe-gps-model-test" visible="true" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" scale="1 1 1" gps-entity-place="latitude: 36.61490542310459; longitude: 139.72161954284306;"></a-entity>-->
@@ -205,21 +210,15 @@
         <!--<a-entity id="horse-gps-model-test" visible="false" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="1 1 1" gps-entity-place="latitude: 35.614869941759814; longitude:  139.7216221073331;" ></a-entity>-->
         <!--<a-entity camera></a-entity>-->
         <a-camera class="camera" gps-camera rotation-reader></a-camera>
-
     </a-scene>
 
-
     <button id="ar-marker-btn" class="ar-marker-btn">数字読み取りモードへ</button>
-
-
 
     <script>
         document.getElementById('ar-marker-btn').addEventListener('click', function () {
             window.location.href = 'index_marker.html';
         });
 
-
-        console.log("init");
         // 距離計算用の関数
         function calculateDistance(lat1, lon1, lat2, lon2) {
             const R = 6371e3; // 地球の半径 (メートル)
@@ -268,21 +267,17 @@
                         distance = calculateDistance(gpsData.latitude, gpsData.longitude, gpsList[i].latitude, gpsList[i].longitude);
                         const model = document.querySelector(gpsList[i].modelId);
                         if (model) {
-                                if (distance <= 11) { // 10メートル以内なら表示
-                                    model.setAttribute('visible', true);
-                                } else {
-                                    model.setAttribute('visible', false);
-                                }
+                            if (distance <= 10) { // 10メートル以内なら表示
+                                model.setAttribute('visible', true);
+                            } else {
+                                model.setAttribute('visible', false);
+                            }
                         }
                     }
 
                 }
             }
         }, 2500); // 2.5秒ごとに確認
-
-        window.addEventListener('gps-camera-update-position', (event) => {
-            console.log('GPS position updated:', event.detail.position);
-        });
     </script>
 </body>
 </html>
