@@ -55,13 +55,17 @@
             <a-asset-item id="mikawa-asset" src="assets/glb/mikawa.glb"></a-asset-item>
 
             <!--gpsからARマーカーに変更-->
-            <!--<a-asset-item id="cat-asset" src="assets/glb/cat.glb"></a-asset-item>
-            <a-asset-item id="rhino-asset" src="assets/glb/rhino.glb"></a-asset-item>
-            <a-asset-item id="giraffe-asset" src="assets/glb/giraffe.glb"></a-asset-item>
-            <a-asset-item id="crocodile-asset" src="assets/glb/crocodile.glb"></a-asset-item>
-            <a-asset-item id="dear-asset" src="assets/glb/dear.glb"></a-asset-item>
-            <a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>-->
+            <a-asset-item id="cat-asset" src="assets/glb/cat.glb"></a-asset-item>
+        <a-asset-item id="rhino-asset" src="assets/glb/rhino.glb"></a-asset-item>
+        <a-asset-item id="giraffe-asset" src="assets/glb/giraffe.glb"></a-asset-item>
+        <a-asset-item id="crocodile-asset" src="assets/glb/crocodile.glb"></a-asset-item>
+        <a-asset-item id="dear-asset" src="assets/glb/dear.glb"></a-asset-item>
+        <a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>
         </a-assets>
+
+        <a-marker id="cat-marker" type="pattern" preset="custom" url="assets/marker/pattern-2.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="cat-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#cat-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
 
         <!--サイ　6テスト-->
         <a-marker id="rhino-marker" type="pattern" preset="custom" url="assets/marker/pattern-6.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
@@ -92,8 +96,8 @@
             <a-entity id="mikawa-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#mikawa-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--14 - 大貴さん-->
-        <a-marker id="daiki-marker" type="pattern" preset="custom" url="assets/marker/pattern-14.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="kobayashi-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#kobayashi-asset" class="clickable" gesture-handler></a-entity>
+        <a-marker id="koba-marker" type="pattern" preset="custom" url="assets/marker/pattern-14.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="koba-model" rotation="180 90 250" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#koba-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--15 - 谷口さん-->
         <a-marker id="taniguchi-marker" type="pattern" preset="custom" url="assets/marker/pattern-15.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
