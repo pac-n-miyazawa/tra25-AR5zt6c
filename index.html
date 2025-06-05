@@ -189,7 +189,7 @@
         <a-entity id="horse-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61494351765561; longitude: 139.72164519470658;" visible="false"></a-entity>
 
         <!--<a-entity camera></a-entity>-->
-        <a-entity class="camera" camera gps-camera arjs-look-controls='smoothingFactor: 0.5' rotation-reader></a-entity>
+        <a-entity class="camera" camera gps-camera rotation-reader></a-entity>
 
     </a-scene>
 
@@ -259,7 +259,7 @@
 
                 }
             }
-        }, 2000); // 2秒ごとに確認
+        }, 2500); // 2.5秒ごとに確認
 
         window.addEventListener('gps-camera-update-position', (event) => {
             console.log('GPS position updated:', event.detail.position);
