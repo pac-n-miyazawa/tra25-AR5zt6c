@@ -246,9 +246,9 @@
                         const model = document.querySelector(gpsList[i].modelId);
                         if (model) {
                             if (distance <= 11) { // 10メートル以内なら表示
-                                model.setAttribute('visible', 'false');
+                                model.setAttribute('visible', false);
                             } else {
-                                model.setAttribute('visible', 'false');
+                                model.setAttribute('visible', false);
                             }
                         }
                         if (i <= 7) { // 最初の7つのモデルに対して表示
