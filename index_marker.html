@@ -56,27 +56,49 @@
 
             <!--gpsからARマーカーに変更-->
             <a-asset-item id="cat-asset" src="assets/glb/cat.glb"></a-asset-item>
-        <a-asset-item id="rhino-asset" src="assets/glb/rhino.glb"></a-asset-item>
-        <a-asset-item id="giraffe-asset" src="assets/glb/giraffe.glb"></a-asset-item>
-        <a-asset-item id="crocodile-asset" src="assets/glb/crocodile.glb"></a-asset-item>
-        <a-asset-item id="dear-asset" src="assets/glb/dear.glb"></a-asset-item>
-        <a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>
+            <a-asset-item id="rhino-asset" src="assets/glb/rhino.glb"></a-asset-item>
+            <a-asset-item id="giraffe-asset" src="assets/glb/giraffe.glb"></a-asset-item>
+            <a-asset-item id="crocodile-asset" src="assets/glb/crocodile.glb"></a-asset-item>
+            <a-asset-item id="dear-asset" src="assets/glb/dear.glb"></a-asset-item>
+            <a-asset-item id="horse-asset" src="assets/glb/horse.glb"></a-asset-item>
         </a-assets>
 
+        <!--熊　1テスト-->
+        <a-marker id="bear-marker" type="pattern" preset="custom" url="assets/marker/pattern-1.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="bear-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#bear-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
+        <!--猫　2テスト-->
         <a-marker id="cat-marker" type="pattern" preset="custom" url="assets/marker/pattern-2.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="cat-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#cat-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
-
-        <!--サイ　6テスト-->
-        <a-marker id="rhino-marker" type="pattern" preset="custom" url="assets/marker/pattern-6.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-entity id="rhino-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#rhino-asset" class="clickable" gesture-handler></a-entity>
+        <!--サイ　3テスト-->
+        <a-marker id="rhino-marker" type="pattern" preset="custom" url="assets/marker/pattern-3.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="rhino-model" position="0 0 0" rotation="0 0 0" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#rhino-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
+        <!--4 - 鹿　被り-->
+        <a-marker id="dear-marker" type="pattern" preset="custom" url="assets/marker/pattern-4.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="dear-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#dear-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
+        <!--5 - キリン 被り-->
+        <a-marker id="giraffe-marker" type="pattern" preset="custom" url="assets/marker/pattern-5.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="giraffe-model" position="0 0 0" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
+        <!--6 - ワニ　被り-->
+        <a-marker id="crocodile-marker" type="pattern" preset="custom" url="assets/marker/pattern-6.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="crocodile-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#crocodile-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
+        <!--7 - 馬　被り-->
+        <a-marker id="horse-marker" type="pattern" preset="custom" url="assets/marker/pattern-7.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-entity id="horse-model" rotation="180 90 180" scale="0.5 0.5 0.5" animation-mixer="loop: repeat" gltf-model="#horse-asset" class="clickable" gesture-handler></a-entity>
+        </a-marker>
+
+
         <!--8 - サイと牛-->
         <a-marker id="rhino_cow-marker" type="pattern" preset="custom" url="assets/marker/pattern-8.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="rhino_cow-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#rhino_cow-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
-        <!--9 - カバ-->
-        <a-marker id="hippo-marker" type="pattern" preset="custom" url="assets/marker/pattern-9.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <!--17 - カバ-->
+        <a-marker id="hippo-marker" type="pattern" preset="custom" url="assets/marker/pattern-17.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="hippo-model" rotation="180 90 180" scale="1 1 1" animation-mixer="loop: repeat" gltf-model="#hippo-asset" class="clickable" gesture-handler></a-entity>
         </a-marker>
         <!--10 - ヤギ-->
