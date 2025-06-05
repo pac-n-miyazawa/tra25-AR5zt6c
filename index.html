@@ -60,7 +60,12 @@
     <h3 class="gps"></h3>
 
     <h3 class="dis h0"></h3>
-   
+    <h3 class="dis h1"></h3>
+    <h3 class="dis h2"></h3>
+    <h3 class="dis h3"></h3>
+    <h3 class="dis h4"></h3>
+    <h3 class="dis h5"></h3>
+    <h3 class="dis h6"></h3>
 
     <a-scene vr-mode-ui="enabled: false;"
              loading-screen="enabled: false;"
@@ -89,13 +94,13 @@
         </a-assets>
 
         <!--1 - 熊-->
-        <a-marker id="bear-marker" type="pattern" preset="custom" url="assets/marker/pattern-1.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <!--<a-marker id="bear-marker" type="pattern" preset="custom" url="assets/marker/pattern-1.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="bear-model" rotation="180 90 -90" scale="0.5 0.5 0.5" animation-mixer="loop: repeat" gltf-model="#bear-asset" class="clickable" gesture-handler></a-entity>
-        </a-marker>
+        </a-marker>-->
         <!--2 - 猫-->
-        <a-marker id="cat-marker" type="pattern" preset="custom" url="assets/marker/pattern-2.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+        <!--<a-marker id="cat-marker" type="pattern" preset="custom" url="assets/marker/pattern-2.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="cat-model" rotation="180 90 -90" scale="1.0 1.0 1.0" animation-mixer="loop: repeat" gltf-model="#cat-asset" class="clickable" gesture-handler></a-entity>
-        </a-marker>
+        </a-marker>-->
         <!--3 - サイ-->
         <!--<a-marker id="rhino-marker" type="pattern" preset="custom" url="assets/marker/pattern-3.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-entity id="rhino-model" position="0 0 0" rotation="0 0 0" scale="1.5 1.5 1.5" animation-mixer="loop: repeat" gltf-model="#rhino-asset" class="clickable" gesture-handler></a-entity>
@@ -169,19 +174,19 @@
         <!--馬　35.965736　138.4665-->
         <!--<a-entity id="horse-gps-model" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.965736; longitude: 138.4665;" visible="false"></a-entity>-->
         <!--本社テスト-->
-        <!--<a-entity id="giraffe-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61490542310459; longitude: 139.72161954284306;" visible="false"></a-entity>-->
+        <a-entity id="giraffe-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#giraffe-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61490542310459; longitude: 139.72161954284306;" visible="false"></a-entity>
         <!--ワニ　35.965035　138.467613-->
-        <!--<a-entity id="crocodile-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#crocodile-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61493471817809; longitude: 139.72163661231565;" visible="false"></a-entity>-->
+        <a-entity id="crocodile-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#crocodile-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61493471817809; longitude: 139.72163661231565;" visible="false"></a-entity>
         <!--鹿　35.965275 138.467118-->
-        <!--<a-entity id="dear-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#dear-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61495167847888; longitude: 139.72164230213986;" visible="false"></a-entity>-->
+        <a-entity id="dear-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#dear-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61495167847888; longitude: 139.72164230213986;" visible="false"></a-entity>
         <!--熊 35.965744 138.466919-->
-        <!--<a-entity id="bear-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#bear-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.614947333528505; longitude: 139.7216210548269;" visible="false"></a-entity>-->
+        <a-entity id="bear-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#bear-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.614947333528505; longitude: 139.7216210548269;" visible="false"></a-entity>
         <!--猫　35.965406　138.467218-->
-        <!--<a-entity id="cat-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#cat-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61488137341433; longitude: 139.72167939286942;" visible="false"></a-entity>-->
+        <a-entity id="cat-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#cat-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61488137341433; longitude: 139.72167939286942;" visible="false"></a-entity>
         <!--サイ　35.964614 138.467246-->
-        <!--<a-entity id="rhino-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#rhino-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.614973499509134; longitude: 139.72163848918444;" visible="false"></a-entity>-->
+        <a-entity id="rhino-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#rhino-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.614973499509134; longitude: 139.72163848918444;" visible="false"></a-entity>
         <!--馬　35.965736　138.4665-->
-        <!--<a-entity id="horse-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61494351765561; longitude: 139.72164519470658;" visible="false"></a-entity>-->
+        <a-entity id="horse-gps-model-test" look-at="[gps-camera]" animation-mixer="loop: repeat" gltf-model="#horse-asset" scale="3.0 3.0 3.0" gps-entity-place="latitude: 35.61494351765561; longitude: 139.72164519470658;" visible="false"></a-entity>
 
         <!--<a-entity camera></a-entity>-->
         <a-entity class="camera" camera gps-camera rotation-reader></a-entity>
@@ -240,7 +245,7 @@
                         distance = calculateDistance(gpsData.latitude, gpsData.longitude, gpsList[i].latitude, gpsList[i].longitude);
                         const model = document.querySelector(gpsList[i].modelId);
                         if (model) {
-                            if (distance <= 10) { // 10メートル以内なら表示
+                            if (distance <= 14) { // 10メートル以内なら表示
                                 model.setAttribute('visible', 'true');
                             } else {
                                 model.setAttribute('visible', 'false');
@@ -253,7 +258,7 @@
 
                 }
             }
-        }, 10000); // 2.5秒ごとに確認
+        }, 2000); // 2.5秒ごとに確認
 
         window.addEventListener('gps-camera-update-position', (event) => {
             console.log('GPS position updated:', event.detail.position);
